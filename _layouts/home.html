@@ -9,7 +9,8 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-
+    <!--{{ content }} -->
+    
     <h3>Test Header</h3>
 
     <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
@@ -20,6 +21,3 @@ layout: default
 
     {% include paginator.html %}
 </div>
-
-
-
