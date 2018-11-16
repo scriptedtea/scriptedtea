@@ -55,7 +55,7 @@
         <p>
         {% for action in page.header.actions %}
           <a href="{{ action.url }}" class="btn btn--light-outline btn--large">{{ action.label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a>
-        {% endfor %}
+            {% endfor %}</p>
       {% endif %}
     </div>
   {% else %}

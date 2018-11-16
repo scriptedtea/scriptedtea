@@ -62,7 +62,7 @@
 }
 
 .page__lead {
-  font-family: $global-font-family;
+  font-family: $page-lead-font-family;
   font-size: $type-size-4;
 }
 
@@ -173,6 +173,8 @@
 
     .page__title {
       font-size: $type-size-2;
+      font-family: $page-title-font-family;
+      font-weight: 500;
 
       @include breakpoint($small) {
         font-size: $type-size-1;

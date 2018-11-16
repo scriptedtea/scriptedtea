@@ -29,9 +29,21 @@ $bodoni: "Bodoni MT", serif !default;
 $calisto: "Calisto MT", serif !default;
 $garamond: Garamond, serif !default;
 
-$global-font-family: $sans-serif !default;
-$header-font-family: $sans-serif !default;
-$caption-font-family: $serif !default;
+/* Google Custom Fonts */
+$dancing: 'Dancing Script', cursive;
+$raleway: 'Raleway', sans-serif;
+$source-serif: 'Source Serif Pro', serif;
+$roboto: 'Roboto', sans-serif;
+
+$site-title-font-family: $dancing;
+$site-title-slogan-font-family: $raleway;
+$page-title-font-family: $raleway;
+$page-lead-font-family: $raleway;
+$global-font-family: $source-serif;
+$header-font-family: $helvetica !default;
+$caption-font-family: $sans-serif-narrow !default;
+$footer-font-family: $sans-serif-narrow;
+$button-text-font-family: $raleway;
 
 /* type scale */
 $type-size-1: 2.441em !default; // ~39.056px

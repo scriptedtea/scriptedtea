@@ -3,6 +3,7 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+        <p class="site-title-slogan">{{ site.title_separator  }}&nbsp;&nbsp;&nbsp;{{ site.description  }}</p>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
             {%- if link.url contains '://' -%}
