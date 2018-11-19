@@ -11,8 +11,11 @@ layout: default
 <div id="main" role="main">
     {{ content }}
     
+    {% include feature_row %}
+    
     <!--<h3>Test Header</h3> -->
 
+    <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
     <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
     {% for post in paginator.posts %}
