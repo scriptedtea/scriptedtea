@@ -209,8 +209,12 @@
   margin-bottom: 2em;
   border-bottom: 1px solid $border-color;
 
+  // This adjusts the spacing for the 
+  // Feature Row. Note that markdownify
+  // adds white spaces in between elements
   .archive__item-title {
-    margin-bottom: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
   }
 }
 
