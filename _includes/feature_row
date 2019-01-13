@@ -22,9 +22,21 @@
           <div class="archive__item-teaser">
           
             <!-- Add Overlay Text during Hover -->
+            {% if f.overlay_text %}
             <div class="archive__item-teaser-hover-overlay">
-               <div class="archive__item-teaser-hover-text">{% if f.overlay_text %}{{ f.overlay_text }}{% endif %}</div>
+                {% if f.url %}
+                  <a href="{{ f_url }}" class="archive__item-teaser-hover-link">
+                    <div class="archive__item-teaser-hover-text">
+                     {% if f.overlay_text %}{{ f.overlay_text }}{% endif %}
+                    </div>
+                  </a>
+                {% else %}
+                  <div class="archive__item-teaser-hover-text">
+                    {% if f.overlay_text %}{{ f.overlay_text }}{% endif %}
+                  </div>
+                {% endif %}
             </div>
+            {% endif %}
           
             <img src=
               {% if f.image_path contains "://" %}

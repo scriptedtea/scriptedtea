@@ -72,6 +72,12 @@
   }
 }
 
+.archive__item-teaser:hover .archive__item-teaser-hover-overlay {
+  opacity: 1;
+  // Make a semi-transparent background so text is still visible
+  background-color: rgba(0,0,0,0.5);
+}
+
 .archive__item-teaser {
   position: relative;
   border-radius: $border-radius;
@@ -82,13 +88,14 @@
   }
 
   // Need to use ampersand in order for nested method to work
-  &:hover {
-    .archive__item-teaser-hover-overlay {
-      opacity: 1;
-      // Make a semi-transparent background so text is still visible
-      background-color: rgba(0,0,0,0.5);
-    }
-  }
+    // Commented out as this essentially is the same as above
+    //  &:hover {
+    //    .archive__item-teaser-hover-overlay {
+    //      opacity: 1;
+    //      // Make a semi-transparent background so text is still visible
+    //      background-color: rgba(0,0,0,0.5);
+    //    }
+    //  }
     
   .archive__item-teaser-hover-overlay {
     position: absolute;
@@ -112,6 +119,14 @@
     transform: translate(-50%, -50%);
     text-align: center;
     //padding: 0px 0px 0px 0px;
+  }
+    
+  .archive__item-teaser-hover-link {
+    height: 100%;
+    width: 100%;
+    display: block;
+    text-align: center;
+    text-decoration: none;
   }
 }
 
