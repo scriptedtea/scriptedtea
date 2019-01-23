@@ -20,9 +20,12 @@ layout: default
     <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
     <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
-    {% for post in paginator.posts %}
-      {% include archive-single.html %}
-    {% endfor %}
+    <div class="grid__wrapper">
+      {% for post in paginator.posts limit:3 %}
+        <!-- You can pass in additional parameters which gets read by liquid -->
+        {% include archive-single.html type="grid" %}
+      {% endfor %}
+    </div>
 
     {% include paginator.html %}
 </div>

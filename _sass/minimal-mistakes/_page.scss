@@ -470,9 +470,9 @@
 .page__related {
   @include clearfix();
   float: left;
-  margin-top: 2em;
+  margin-top: 0em;
   padding-top: 1em;
-  border-top: 1px solid $border-color;
+  //border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
     float: right;
@@ -491,8 +491,8 @@
 
 .page__related-title {
   margin-bottom: 10px;
-  font-size: $type-size-6;
-  text-transform: uppercase;
+  font-size: $type-size-5;
+  //text-transform: uppercase;
 }
 
 /*
