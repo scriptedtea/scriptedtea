@@ -64,12 +64,7 @@
       {% endif %}
     </div>
   {% else %}
-    <!-- Add Picture using Jekyll Picture Tag -->
-    {% picture
-       {{ img_path }}
-       --alt {{ image_description }}
-       --picture class="page__hero-image"
-    %}
+    <img src="{{ img_path }}" alt="{{ image_description }}" class="page__hero-image">
   {% endif %}
   {% if page.header.caption %}
     <span class="page__hero-caption">{{ page.header.caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
