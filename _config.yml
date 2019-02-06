@@ -298,3 +298,10 @@ collections:
   projects:
     output: true
     permalink: /:collection/:path/
+    
+# Configure Jekyll Picture Tag
+picture: 
+  source: "assets/images/_fullsize"
+  output: "generated" 
+  suppress_warnings: false
+  relative_url: true
