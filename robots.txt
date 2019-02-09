@@ -1,1 +1,1 @@
-Sitemap: https://scriptedtea.github.io/scriptedtea-site/sitemap.xml
+Sitemap: https://scriptedtea.github.io/scriptedtea/sitemap.xml
