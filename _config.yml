@@ -152,6 +152,7 @@ footer:
 # Reading Files
 include:
   - .htaccess
+  - .nojekyll
   - _pages
 exclude:
   - "*.sublime-project"
