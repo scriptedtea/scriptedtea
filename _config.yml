@@ -20,9 +20,9 @@ title                    : "Scripted Tea"
 title_separator          : "-"
 name                     : "Lily Guo"
 description              : "Coding and My Matcha Life"
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+url                      : "https://scriptedtea.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "/scriptedtea-site" # the subpath of your site, e.g. "/blog"
+repository               : "scriptedtea/scriptedtea-site" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 teaser                   : /assets/images/kyoto1.jpg
 # breadcrumbs            : false # true, false (default)
