@@ -36,8 +36,7 @@ task :preview do
     "source"        => base.join('test').to_s,
     "destination"   => base.join('test/_site').to_s,
     "force_polling" => false,
-    "serving"       => true,
-    "theme"         => "minimal-mistakes-jekyll"
+    "serving"       => true
   }
 
   options = Jekyll.configuration(options)

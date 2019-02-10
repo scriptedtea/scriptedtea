@@ -6,5 +6,5 @@ $masthead-link-color: #219e8d;
 
 @charset "utf-8";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes/skins/mint"; // skin
 @import "minimal-mistakes"; // main partials
