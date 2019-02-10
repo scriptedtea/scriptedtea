@@ -1,8 +1,8 @@
 var store = [{
         "title": "Benefits of static site generators",
-        "excerpt":"Some of the benefits of a static website generators are that they are: Simple - makes building and maintaining websites incredibly simple, Static sites are easier to maintian (No databases, no server-side scripts!). User static website generators when you’re after simplicity and want to put the emphasis on the content,...","categories": ["tutorial"],
+        "excerpt":"Some of the benefits of a static website generators are that they are: Simple - makes building and maintaining websites incredibly simple, Static sites are easier to maintian (No databases, no server-side scripts!). User static website generators when you’re after simplicity and want to put the emphasis on the content,...","categories": ["tech"],
         "tags": [],
-        "url": "https://scriptedtea.github.io/scriptedtea/tutorial/benefits-of-static-website-generators/",
+        "url": "https://scriptedtea.github.io/scriptedtea/tech/benefits-of-static-website-generators/",
         "teaser":"https://scriptedtea.github.io/scriptedtea/assets/images/kyoto1.jpg"},{
         "title": "Learning Jekyll",
         "excerpt":"","categories": ["tech"],
