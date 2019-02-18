@@ -15,7 +15,7 @@ url                      : "https://scriptedtea.github.io" # the base hostname &
 baseurl                  : "/scriptedtea" # the subpath of your site, e.g. "/blog"
 repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name
 # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-teaser                   : /assets/images/kyoto1.jpg
+teaser                   : /assets/images/generated/kyoto1-1000by664-43c81d.jpg
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
