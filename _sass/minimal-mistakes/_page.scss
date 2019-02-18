@@ -20,16 +20,21 @@
 }
 
 .page {
+    
+  @include breakpoint($medium) {
+    float: left; // can't float right because it would break Blah article
+  }
+    
   @include breakpoint($large) {
-    float: left;
-    //width: calc(100% - #{$right-sidebar-width-narrow});
-    //padding-right: $right-sidebar-width-narrow;
+    float: right;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    float: left;
-    //width: calc(100% - #{$right-sidebar-width});
-    //padding-right: $right-sidebar-width;
+    float: right;
+    width: calc(100% - #{$right-sidebar-width});
+    padding-right: $right-sidebar-width;
   }
 
   .page__inner-wrap {
@@ -55,12 +60,38 @@
 
 // Put the comments, social links and paginator in a separate div
 .page__more {
-  float: left;
-  margin-top: 1em;
-  margin-left: 0;
-  margin-right: 0;
-  min-width: 100%;
-  clear: both;
+    
+  @include clearfix();
+  float: right;
+  margin-top: 0em;
+  padding-top: 1em;
+    
+  @include breakpoint($small) {
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 100%;
+  }
+    
+  @include breakpoint($medium) {
+    float: right;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    min-width: 100%;
+  }
+    
+  @include breakpoint($large) {
+    float: right;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
+    min-width: 0%;
+  }
+
+  @include breakpoint($x-large) {
+    float: right;
+    width: calc(100% - #{$right-sidebar-width});
+    padding-right: $right-sidebar-width;
+    min-width: 0%;
+  }
 }
 
 .page__title {
@@ -480,18 +511,21 @@
 
 .page__related {
   @include clearfix();
-  float: left;
+  float: right;
   margin-top: 0em;
   padding-top: 1em;
   //border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    //float: right;
-    //width: calc(100% - #{$right-sidebar-width-narrow});
+    float: right;
+    width: calc(100% - #{$right-sidebar-width-narrow});
+    padding-right: $right-sidebar-width-narrow;
   }
 
   @include breakpoint($x-large) {
-    //width: calc(100% - #{$right-sidebar-width});
+    float: right;
+    width: calc(100% - #{$right-sidebar-width});
+    padding-right: $right-sidebar-width;
   }
 
   a {

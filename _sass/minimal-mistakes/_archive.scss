@@ -92,7 +92,6 @@
     //  &:hover {
     //    .archive__item-teaser-hover-overlay {
     //      opacity: 1;
-    //      // Make a semi-transparent background so text is still visible
     //      background-color: rgba(0,0,0,0.5);
     //    }
     //  }
@@ -295,7 +294,7 @@
 
     &:nth-child(2n + 2) {
       clear: none;
-      margin-left: gutter(of 10);
+      margin-left: gutter(1 of 10);
     }
   }
 

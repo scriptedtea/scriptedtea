@@ -9,11 +9,11 @@
 locale                   : "en-US"
 title                    : "Scripted Tea"
 title_separator          : "-"
-name                     : "Lily Guo"
+name                     : "ScriptedTea"
 description              : "Coding and My Matcha Life"
-url                      : "https://scriptedtea.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://scriptedtea.github.io" # the base hostname & protocol for your site
 baseurl                  : "/scriptedtea" # the subpath of your site, e.g. "/blog"
-repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name
 # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 teaser                   : /assets/images/kyoto1.jpg
 # breadcrumbs            : false # true, false (default)
@@ -205,8 +205,8 @@ sass:
 
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
+paginate: 3 # amount of posts to show
+paginate_path: "/page:num/"
 timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
