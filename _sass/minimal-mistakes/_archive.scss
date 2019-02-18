@@ -45,7 +45,7 @@
 
 .archive__item-title {
   margin-bottom: 0.25em;
-  font-family: $sans-serif-narrow;
+  font-family: $page-title-font-family;
   line-height: initial;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -531,6 +531,34 @@
       .archive__item-body {
         margin: 0 auto;
         width: span(7 of 12);
+      }
+    }
+  }
+    
+  &--single {
+    position: relative;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    clear: both;
+    font-size: 1.125em;
+
+    .archive__item-teaser {
+      margin-bottom: 2em;
+    }
+
+    @include breakpoint($small) {
+      .archive__item-teaser {
+        float: left;
+        width: span(6 of 12);
+      }
+
+      .archive__item-body {
+        float: right;
+        padding-left: gutter(0.5 of 12);
+        padding-right: gutter(1 of 12);
+        width: span(6 of 12);
       }
     }
   }

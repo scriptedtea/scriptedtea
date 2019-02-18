@@ -11,12 +11,10 @@ layout: default
 <div id="main" role="main">
     
     <!-- Can optionally include here
-    id="feature1" if there are multiple 
-    feature rows. Also type="left" or "center" or "right" -->
+    id="feature1" if there are multiple feature rows. 
+    You can also pass in type="left" or "center" or "right" -->
     {% include feature_row %}
     
-    <!--<h3>Test Header</h3> -->
-
     <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
     <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
 
