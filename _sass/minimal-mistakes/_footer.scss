@@ -69,8 +69,12 @@
     padding-top: 5px;
     padding-bottom: 5px;
     font-family: $sans-serif-narrow;
-    font-size: $type-size-6;
+    font-size: $type-size-5;
     text-transform: uppercase;
+  }
+    
+  .follow-label {
+    font-size: $type-size-7;
   }
 
   li + li:before {
@@ -79,7 +83,7 @@
   }
 
   a {
-    padding-right: 10px;
+    padding-right: 5px;
     font-weight: bold;
   }
 
