@@ -31,7 +31,7 @@ layout: default
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
           {% endif %}
           {% if page.comments %}
-            <p class="page__comment-count"><i class="fas fa-comment"></i>&nbsp;<a href="{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">0 Comment</a></p>
+            <p class="page__comment-count"><i class="fas fa-comment"></i>&nbsp;<a href="{{ site.baseurl }}{{ page.url }}#disqus_thread" data-disqus-identifier="{{ page.id }}">0 Comments</a></p>
           {% endif %}
         </header>
       {% endunless %}
@@ -68,7 +68,7 @@ layout: default
 
         {% include post_pagination.html %}
         
-         {% if jekyll.environment == 'production' and site.comments.provider and page.comments %} 
+         {% if site.comments.provider and page.comments %} 
             {% include comments.html %}
          {% endif %} 
     </div>
