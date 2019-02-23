@@ -25,6 +25,7 @@ en: &DEFAULT_EN
   follow_label               : "Follow Me:"
   feed_label                 : "Feed"
   powered_by                 : "Powered by"
+  theme_based_on             : "Theme based on"
   website_label              : "Website"
   email_label                : "Email"
   recent_posts               : "Recent posts"
@@ -343,6 +344,7 @@ zh: &DEFAULT_ZH_HANS
   follow_label               : "关注:"
   feed_label                 : "Feed"
   powered_by                 : "技术来自于"
+  theme_based_on             : "主题基于"
   website_label              : "网站"
   email_label                : "电子邮箱"
   recent_posts               : "最新文章"
@@ -385,7 +387,8 @@ zh-TW: &DEFAULT_ZH_HANT
   related_label              : "猜您有與趣"
   follow_label               : "追蹤:"
   feed_label                 : "RSS Feed"
-  powered_by                 : "Powered by"
+  powered_by                 : "技術來自於"
+  theme_based_on             : "主題基於"
   website_label              : "網站"
   email_label                : "電子信箱"
   recent_posts               : "最新文章"
@@ -967,7 +970,8 @@ ja: &DEFAULT_JA
   related_label              : "関連記事"
   follow_label               : "フォロー"
   feed_label                 :
-  powered_by                 :
+  powered_by                 : "Powered by"
+  theme_based_on             : "Theme based on"
   website_label              :
   email_label                :
   recent_posts               : "最近の投稿"

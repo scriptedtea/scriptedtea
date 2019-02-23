@@ -9,7 +9,7 @@
 locale                   : "en-US"
 title                    : "Scripted Tea"
 title_separator          : "-"
-name                     : "ScriptedTea"
+name                     : "Lily Guo"
 description              : "Coding and My Matcha Life"
 url                      : "https://scriptedtea.github.io" # the base hostname & protocol for your site
 baseurl                  : "/scriptedtea" # the subpath of your site, e.g. "/blog"
