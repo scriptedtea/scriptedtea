@@ -18,6 +18,9 @@ repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name
 teaser                   : /assets/images/generated/kyoto1-1000by664-43c81d.jpg
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
+
+min_related_tags_count   : 1
+
 comments:
   provider               : "disqus" # false (default), "disqus", "custom"
   disqus:
@@ -253,7 +256,7 @@ defaults:
       read_time: true
       comments: true
       share: true
-      related: true # whether it turns on the You May Also Enjoy widget or not
+      related: true # show related posts
       #classes: wide
   # _pages
   - scope:
