@@ -2,6 +2,7 @@
 title: Happy New Year!
 date: 2019-01-13
 categories: [miscellaneous]
+tags: [diary]
 ---
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/kyoto1-800by532-43c81d.jpg" alt="" class="full">
