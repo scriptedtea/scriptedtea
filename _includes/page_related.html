@@ -4,12 +4,14 @@
       {% if page.id and page.related %}
         <div class="page__related">
           <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy..." }}</h4>
+          <div class="grid__wrapper">
 
         {% assign posts_in_same_category = site.categories[page.categories.first] %}
 
         {% for post in posts_in_same_category %}
 
           {% assign sameTagCount = 0 %}
+          {% assign relatedPosts = 0 %}
 
           <!-- Make sure that it's not the same as itself -->
           {% if post.url != page.url %}
@@ -21,11 +23,17 @@
           {% endif %}
           <!-- Include only if it has passed the min -->
           {% if sameTagCount >= site.min_related_tags_count %}
-              <div class="grid__wrapper">
-                  {% include archive-single.html type="related" %}
-              </div>
+              <!-- Break if we have reached max # posts -->
+              {% if relatedPosts >= 3 %}
+                {% break %}
+              {% endif %}
+              
+              {% include archive-single.html type="related" %}
+              
+              {% assign relatedPosts = relatedPosts | plus: 1 %}
           {% endif %}
         {% endfor %}
+          </div>
         </div>
 {% endif %}
 
