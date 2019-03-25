@@ -1,0 +1,268 @@
+/* 
+===============
+PROJECTS
+===============
+*/
+
+.project__header .title {
+	color: #111;
+	font-size: 26px;
+	line-height: 1.15
+}
+
+.brick {
+	float: left;
+	max-width: 600px;
+	margin: 0;
+	opacity: 0;
+	position: relative;
+	-webkit-transition: opacity 300ms ease-in-out;
+	transition: opacity 300ms ease-in-out;
+	width: 100%;
+    max-height: 600px;
+}
+
+.brick--show {
+	opacity: 1
+}
+
+.brick>a {
+	display: block
+}
+
+.brick::after {
+	clear: both;
+	content: '';
+	display: block
+}
+
+.projects-feed {
+    @include clearfix();
+    width: 100%;
+}
+
+.projects-feed .project {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover
+}
+
+.projects-feed .project,
+.projects-feed .project .thumb {
+	overflow: hidden
+}
+
+.projects-feed .thumb {
+	position: relative
+}
+
+.projects-feed .thumb {
+	-ms-transition: opacity 350ms ease-in-out, -ms-transform 400ms ease-in-out;
+	-webkit-transition: opacity 350ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 350ms ease-in-out, transform 400ms ease-in-out;
+	z-index: 2
+}
+
+.projects-feed a:hover .thumb {
+	opacity: 0;
+	-ms-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2)
+}
+
+.thumbnail-title-wrap {
+	background-image: radial-gradient(circle, rgba(0, 0, 0, .4) 0%, rgba(0, 0, 0, .65) 100%);
+	height: 100%;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	text-align: center;
+	-ms-transform: scale(1.3);
+	-webkit-transform: scale(1.3);
+	transform: scale(1.3);
+	-ms-transition: opacity 400ms ease-in-out, -ms-transform 400ms ease-in-out;
+	-webkit-transition: opacity 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+	transition: opacity 400ms ease-in-out, transform 400ms ease-in-out;
+	width: 100%
+}
+
+.projects-feed .project a:hover .thumbnail-title-wrap {
+	opacity: 1;
+	-ms-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1)
+}
+
+.thumbnail-title-wrap::before {
+	content: '';
+	display: inline-block;
+	height: 100%;
+	margin-right: -.25em;
+	vertical-align: middle
+}
+
+.center {
+	display: inline-block;
+	margin: 0;
+	max-width: 90%;
+	vertical-align: middle
+}
+
+.title--thumbnail {
+	color: #FFF;
+	display: inline-block;
+    font-family: $button-text-font-family;
+    font-weight: normal;
+	font-size: 26px;
+	margin-bottom: 10px;
+	padding-right: 0
+}
+
+.thumb img {
+    object-fit: cover;
+	height: 100%;
+	width: 100%;
+}
+
+div.image,
+div.audio,
+div.video {
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 750px;
+	text-align: center
+}
+
+@-webkit-keyframes sk-pulseScaleOut {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 0
+	}
+}
+
+@keyframes sk-pulseScaleOut {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 0
+	}
+}
+
+@media only screen and (min-width:600px) {
+	.brick {
+		width: 300px;
+        height: 300px; 
+	} 
+    .thumbnail-title-wrap {
+       height: 300px;
+        width: 300px;
+    }
+    .thumb img {
+	   height: 300px;
+        width: 300px;
+    }
+    
+	.page {
+		margin-bottom: 80px
+	}
+	.project__description {
+		float: left;
+		padding-right: 3.3333%;
+		width: 69.3333%
+	}
+	.project__meta {
+		float: right;
+		padding-left: 3.3333%;
+		width: 30.6667%
+	}
+	.project__description--no-meta {
+		float: none;
+		padding-right: 0;
+		width: 100%
+	}
+	div.image,
+	div.audio,
+	div.video {
+		margin-top: 40px
+	}
+	.asset-description {
+		padding: 60px 0 20px
+	}
+}
+
+@media only screen and (min-width:1200px) {
+	.brick {
+		width: 400px;
+        height: 400px;
+	}
+    .thumbnail-title-wrap {
+       height: 400px;
+        width: 400px;
+    }
+    .thumb img {
+	   height: 400px;
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width:1800px) {
+	.brick {
+      width: 450px;
+      height: 450px;
+	}
+    .thumbnail-title-wrap {
+       height: 450px;
+        width: 450px;
+    }
+    .thumb img {
+	   height: 450px;
+        width: 450px;
+    }
+}
+
+@media only screen and (min-width:2400px) {
+	.brick {
+		width: 480px;
+        height: 480px;
+	}
+    .thumbnail-title-wrap {
+       height: 480px;
+       width: 480px;
+    }
+    .thumb img {
+	   height: 480px;
+       width: 480px;
+    }
+}
+
+@media only screen and (min-width:3000px) {
+	.brick {
+		width: 16.6667%
+	}
+}
+
+@media only screen and (min-width:3600px) {
+	.brick {
+		width: 14.2857%
+	}
+}
+
+@media only screen and (min-width:4200px) {
+	.brick {
+		width: 12.5%
+	}
+}
+

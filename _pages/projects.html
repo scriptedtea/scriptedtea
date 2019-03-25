@@ -1,4 +1,55 @@
 ---
 layout: default
 permalink: /projects/
+projects:
+  - title: "Distributed Crowd-Sourced Game"
+    image_path: /assets/images/projects/ivan6-637by616-da29aa.png
+    image_path2: /assets/images/projects/ivan2-600by435-185c82.png
+    alt: "Distributed Crowd-Sourced Game"
+    url: /projects/distributedgame
+  - title: "Make It Rain"
+    image_path: /assets/images/projects/makeitrain1-600by447-d57d62.png
+    image_path2: /assets/images/projects/makeitrain2-600by446-d1615e.png
+    alt: "Make It Rain"
+    url: /projects/makeitrain
+  - title: "Linear Blend Skinning Demo"
+    image_path: /assets/images/projects/bear3-1000by563-44856b.png
+    image_path2: /assets/images/projects/bear6-600by338-242ce6.png
+    alt: "Linear Blend Skinning Demo"
+    url: /projects/linearblenddemo
+  - title: "BETH - Semantic Tableux Solver"
+    image_path: /assets/images/projects/beth.png
+    alt: "BETH - Semantic Tableux Solver"
+    url: /projects/bethapp
 ---
+
+<div id="main" role="main">
+  <div class="projects-feed cf">
+    {% assign projects = page.projects %}
+    {% for p in projects %}
+        {% assign img_path = p.image_path | relative_url %}
+        {% if p.image_path2 %}
+          {% assign img_path2 = p.image_path2 | relative_url %}
+        {% else %}
+          {% assign img_path2 = img_path %}
+        {% endif %}
+        {% assign project_url = p.url | relative_url %}
+        
+        <article class="project brick brick--show" style="background-image: url('{{ img_path2 }}')">
+            <a href="{{ project_url }}" title="{{ p.title }}">
+                <div class="thumb">
+                    <img src="{{ img_path }}" alt="{{ p.alt }}">
+                    
+                    {% picture bear6.png %}              
+                    
+                </div>
+                <div class="thumbnail-title-wrap">
+                    <div class="center">
+                        <h2 class="title--thumbnail">{{ p.title }}</h2>
+                    </div>
+                </div>
+            </a>
+        </article>    
+    {% endfor %}
+  </div>
+</div>
