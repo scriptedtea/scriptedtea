@@ -108,7 +108,7 @@ PROJECTS
 	display: inline-block;
 	margin: 0;
 	max-width: 90%;
-	vertical-align: middle
+	//vertical-align: middle
 }
 
 .title--thumbnail {
@@ -218,51 +218,51 @@ div.video {
     }
 }
 
-@media only screen and (min-width:1800px) {
-	.brick {
-      width: 450px;
-      height: 450px;
-	}
-    .thumbnail-title-wrap {
-       height: 450px;
-        width: 450px;
-    }
-    .thumb img {
-	   height: 450px;
-        width: 450px;
-    }
-}
+//@media only screen and (min-width:1800px) {
+//	.brick {
+//      width: 450px;
+//      height: 450px;
+//	}
+//    .thumbnail-title-wrap {
+//       height: 450px;
+//        width: 450px;
+//    }
+//    .thumb img {
+//	   height: 450px;
+//        width: 450px;
+//    }
+//}
+//
+//@media only screen and (min-width:2400px) {
+//	.brick {
+//		width: 480px;
+//        height: 480px;
+//	}
+//    .thumbnail-title-wrap {
+//       height: 480px;
+//       width: 480px;
+//    }
+//    .thumb img {
+//	   height: 480px;
+//       width: 480px;
+//    }
+//}
 
-@media only screen and (min-width:2400px) {
-	.brick {
-		width: 480px;
-        height: 480px;
-	}
-    .thumbnail-title-wrap {
-       height: 480px;
-       width: 480px;
-    }
-    .thumb img {
-	   height: 480px;
-       width: 480px;
-    }
-}
-
-@media only screen and (min-width:3000px) {
-	.brick {
-		width: 16.6667%
-	}
-}
-
-@media only screen and (min-width:3600px) {
-	.brick {
-		width: 14.2857%
-	}
-}
-
-@media only screen and (min-width:4200px) {
-	.brick {
-		width: 12.5%
-	}
-}
+//@media only screen and (min-width:3000px) {
+//	.brick {
+//		width: 16.6667%
+//	}
+//}
+//
+//@media only screen and (min-width:3600px) {
+//	.brick {
+//		width: 14.2857%
+//	}
+//}
+//
+//@media only screen and (min-width:4200px) {
+//	.brick {
+//		width: 12.5%
+//	}
+//}
 

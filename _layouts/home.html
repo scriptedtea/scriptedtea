@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
-
-{% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
-  {% include page__hero.html %}
-{% elsif page.header.video.id and page.header.video.provider %}
-  {% include page__hero_video.html %}
+{% if paginator.page == 1 %}
+    {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
+      {% include page__hero.html %}
+    {% elsif page.header.video.id and page.header.video.provider %}
+      {% include page__hero_video.html %}
+    {% endif %}
 {% endif %}
 
 <div id="main" role="main">
@@ -13,11 +14,15 @@ layout: default
     <!-- Can optionally include here
     id="feature1" if there are multiple feature rows. 
     You can also pass in type="left" or "center" or "right" -->
-    {% include feature_row %}
+    {% if paginator.page == 1 %}
+      {% include feature_row %}
     
-    <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
-    <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-
+      <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
+      <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+    {% else %}
+      <h3 class="archive__subtitle">Past Posts</h3>
+    {% endif %}
+    
     <div class="grid__wrapper">
       {% for post in paginator.posts limit:3 %}
         <!-- You can pass in additional parameters which gets read by liquid -->

@@ -1,7 +1,7 @@
 {% if page.header.image contains "://" %}
   {% capture img_path %}{{ page.header.image }}{% endcapture %}
 {% else %}
-  {% capture img_path %}{{ page.header.image | relative_url }}{% endcapture %}
+  {% capture img_path %}{{ page.header.image }}{% endcapture %}
 {% endif %}
 
 {% if page.header.cta_url contains "://" %}
