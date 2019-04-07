@@ -104,3 +104,13 @@ $(document).ready(function() {
     midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
   });
 });
+
+// Magnific-Popup for custom HTMl
+$('.open-popup-html').magnificPopup({
+  type: 'ajax',
+  midClick: true,
+  closeBtnInside: true,
+  showCloseBtn: true,
+  closeOnBgClick: true
+});
+

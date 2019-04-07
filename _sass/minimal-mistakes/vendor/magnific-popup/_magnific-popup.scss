@@ -47,6 +47,9 @@ $mfp-controls-text-color:             #CCC !default; // Color of preloader and "
 $mfp-controls-text-color-hover:       #FFF !default;
 $mfp-IE7support:                      true !default; // Very basic IE7 support
 
+// Close button
+$mfp-close-button-color:              #000000;
+
 // Iframe-type options
 $mfp-include-iframe-type:             true !default;
 $mfp-iframe-padding-top:              40px !default;
@@ -111,7 +114,7 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
   height: 100%;
   left: 0;
   top: 0;
-  padding: 0 $mfp-popup-padding-left;
+  padding: 0 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -149,6 +152,7 @@ $mfp-use-visuallyhidden:              false !default; // Hide content from brows
 .mfp-ajax-holder {
   .mfp-content {
     width: 100%;
+    //height: 100%;
     cursor: auto;
   }
 }
@@ -288,7 +292,7 @@ button {
     filter: unquote("alpha(opacity=#{$mfp-controls-opacity*100})");
   }
   padding: 0 0 18px 10px;
-  color: $mfp-controls-color;
+  color: $mfp-close-button-color;
 
   font-style: normal;
   font-size: 28px;
@@ -308,13 +312,13 @@ button {
 }
 .mfp-close-btn-in {
   .mfp-close {
-    color: $mfp-inner-close-icon-color;
+    color: $mfp-close-button-color;
   }
 }
 .mfp-image-holder,
 .mfp-iframe-holder {
   .mfp-close {
-    color: $mfp-controls-color;
+    color: $mfp-close-button-color;
     right: -6px;
     text-align: right;
     padding-right: 6px;

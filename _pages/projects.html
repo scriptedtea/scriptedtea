@@ -2,7 +2,7 @@
 layout: default
 permalink: /works/
 projects:
-  - title: "ME Run - A Mobile Game"
+  - title: "ME Run"
     image_path: /assets/images/projects/merun5.png
     image_path2: /assets/images/projects/merun6.png
     alt: "ME Run - A Mobile Game"
@@ -35,29 +35,32 @@ projects:
 ---
 
 <div id="main" role="main">
-  <div class="projects-feed cf">
-    {% assign projects = page.projects %}
-    {% for p in projects %}
-        {% assign img_path = p.image_path | relative_url %}
-        {% if p.image_path2 %}
-          {% assign img_path2 = p.image_path2 | relative_url %}
-        {% else %}
-          {% assign img_path2 = img_path %}
-        {% endif %}
-        {% assign project_url = p.url | relative_url %}
+    <div class="modal-center-wrapper">
+          <div class="projects-feed modal-center">
+            {% assign projects = page.projects %}
+            {% for p in projects %}
+                {% assign img_path = p.image_path | relative_url %}
+                {% if p.image_path2 %}
+                    {% assign img_path2 = p.image_path2 | relative_url %}
+                {% else %}
+                    {% assign img_path2 = img_path %}
+                {% endif %}
+                {% assign project_url = p.url | relative_url %}
         
-        <article class="project brick brick--show" style="background-image: url('{{ img_path2 }}')">
-            <a href="{{ project_url }}" title="{{ p.title }}">
-                <div class="thumb">
-                    <img src="{{ img_path }}" alt="{{ p.alt }}">                    
-                </div>
-                <div class="thumbnail-title-wrap">
-                    <div class="center">
-                        <h2 class="title--thumbnail">{{ p.title }}</h2>
-                    </div>
-                </div>
-            </a>
-        </article>    
-    {% endfor %}
-  </div>
+                <article class="project brick brick--show" style="background-image: url('{{ img_path2 }}')">
+                    <a href="{{ project_url }}" title="{{ p.title }}" class="open-popup-html">
+                        <div class="thumb">
+                            <img src="{{ img_path }}" alt="{{ p.alt }}">                    
+                        </div>
+                        <div class="thumbnail-title-wrap">
+                            <div class="center">
+                                <h2 class="title--thumbnail">{{ p.title }}</h2>
+                            </div>
+                        </div>
+                    </a>
+                </article>    
+            {% endfor %}
+        </div>
+    </div>
+
 </div>

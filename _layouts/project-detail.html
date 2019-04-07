@@ -1,0 +1,46 @@
+---
+layout: blank
+---
+    <div id="modal modal-content" class="modal-content modal-content--show">
+        <h2 class="project__title">{{ page.title }}</h2>
+        
+        <div class="project__content">
+            <div class="project__description">
+              {{ page.description | markdownify | remove: "<p>" | remove: "</p>" }}
+            </div>
+            <div class="project__meta">
+                <span>Date: 
+                    <span>{{ page.meta.date }}</span>
+                </span>
+                <br>
+                <span>Platforms: 
+                    <span>{{ page.meta.platforms }}</span>
+                </span>
+                <br>
+                {% if page.meta.website %}
+                    <span>
+                        <a href="{{ page.meta.website }}" target="_blank">Website</a>
+                    </span>
+                    <br>
+                {% endif %}
+                {% if page.meta.source_code %}
+                    <span>
+                        <a href="{{ page.meta.source_code }}" target="_blank"><i class="fas fa-code-branch"></i>
+                        <span>{{ page.meta.source_code_type }}</span>
+                        </a>
+                    </span>
+                    <br>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="modal-center-wrapper">
+        {% for image in page.images %}
+            <div class="modal-center">
+                {% assign img_alt = image.alt %}
+                {% assign img_path = image.path | relative_url %}
+                <img src="{{ img_path }}" alt="{{ img_alt }}"> 
+            </div>
+        {% endfor %}   
+        </div>
+    </div>
