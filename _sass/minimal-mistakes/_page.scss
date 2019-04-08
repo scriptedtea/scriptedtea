@@ -101,8 +101,14 @@
   }
 }
 
+.page__title__wrapper {
+  padding: 0.5em;
+  display: inline-block;
+  background-color: #000;
+}
+
 .page__title {
-  margin-top: 0;
+  margin: 0 0;
   line-height: 1;
 
   & + .page__meta {

@@ -258,7 +258,7 @@ PROJECT FEED Section
 	display: inline-block;
     font-family: $button-text-font-family;
     font-weight: normal;
-	font-size: 26px;
+	font-size: 30px;
 	margin-bottom: 10px;
 	padding-right: 0
 }
@@ -303,17 +303,21 @@ div.video {
 	}
 }
 
-@media only screen and (min-width:$small) {
+@include breakpoint($small) {
     
 	.brick,
     .thumbnail-title-wrap,
     .thumb img {
-	   height: 200px;
-        width: 200px;
+	   height: 300px;
+        width: 300px;
     }
     
     .projects-feed {
         width: 600px;
+    }
+    
+    .title--thumbnail {
+      font-size: 25px;
     }
     
 	.page {
@@ -349,12 +353,16 @@ div.video {
 	.brick,
     .thumbnail-title-wrap,
     .thumb img {
-	   height: 250px;
-        width: 250px;
+	   height: 350px;
+       width: 350px;
     }
     
     .projects-feed {
-        width: 750px;
+        width: 700px;
+    }
+    
+    .title--thumbnail {
+      font-size: 28px;
     }
     
 	.page {
@@ -390,11 +398,15 @@ div.video {
     .thumbnail-title-wrap,
     .thumb img {
 	   height: 300px;
-        width: 300px;
+       width: 300px;
     }
     
     .projects-feed {
         width: 900px;
+    }
+    
+    .title--thumbnail {
+      font-size: 25px;
     }
 }
 

@@ -13,7 +13,7 @@ layout: blank
                     <span>{{ page.meta.date }}</span>
                 </span>
                 <br>
-                <span>Platforms: 
+                <span>Platform: 
                     <span>{{ page.meta.platforms }}</span>
                 </span>
                 <br>
@@ -35,6 +35,10 @@ layout: blank
         </div>
         
         <div class="modal-center-wrapper">
+        {% if page.video %}
+            {% include video id=page.video.id provider=page.video.provider %}
+        {% endif %}
+        
         {% for image in page.images %}
             <div class="modal-center">
                 {% assign img_alt = image.alt %}
