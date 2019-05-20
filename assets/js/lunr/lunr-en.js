@@ -50,7 +50,9 @@ $(document).ready(function() {
               '<div class="archive__item-teaser">'+
                 '<img src="'+store[ref].teaser+'" alt="">'+
               '</div>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+              '<div class="archive__item-body">'+
+                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,50).join(" ")+'...</p>'+
+              '</div>'+
             '</article>'+
           '</div>';
       }
@@ -61,7 +63,9 @@ $(document).ready(function() {
               '<h2 class="archive__item-title" itemprop="headline">'+
                 '<a href="'+store[ref].url+'" rel="permalink">'+store[ref].title+'</a>'+
               '</h2>'+
-              '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,20).join(" ")+'...</p>'+
+              '<div class="archive__item-body">'+
+                '<p class="archive__item-excerpt" itemprop="description">'+store[ref].excerpt.split(" ").splice(0,50).join(" ")+'...</p>'+
+              '</div>'+
             '</article>'+
           '</div>';
       }
