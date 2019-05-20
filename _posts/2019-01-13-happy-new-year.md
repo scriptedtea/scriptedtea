@@ -8,7 +8,7 @@ header:
 excerpt: "Happy New Year! I was on a plane when the clock striked past midnight while coming back on my trip from China. My 2-week vacation went by in a blur, and the next thing I knew I was already back to work. Unfortunately I caught a stomach flu nearing the tail end of my trip so I took a day off to recover. I found that drinking some Chinese medicine really helped with re-gaining my appetite, and after 2 weeks of treatment I was finally able to eat normally."
 ---
 
-<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/image6-600by602-414ee3.jpg" alt="" class="full">
+<img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/image6-600by602-414ee3.jpg" alt="">
 
 Happy New Year! I was on a plane when the clock striked past midnight while coming back on my trip from China. My 2 week vacation went by in a blur, and the next thing I knew I was already back to work. Unfortunately I caught a flu nearing the tail end of my trip so I took a day off to recover. I found that drinking some Chinese medicine really helped with re-gaining my appetite, and after 2 weeks I was finally able to eat normally.
 

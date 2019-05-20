@@ -168,6 +168,7 @@
    List view
    ========================================================================== */
 
+// For items in the blog list and search list
 .list__item {
   .page__meta {
     margin: 0 0 4px;
@@ -177,10 +178,7 @@
   .archive__item-excerpt {
     margin-top: 5px;
   }
-}
-
-.list__wrapper {
-
+    
   position: relative;
   float: left;
   margin-left: 0;
@@ -194,24 +192,30 @@
   }
 
   .archive__item-teaser {
-    margin-bottom: 2em;
+    margin-bottom: 0.5em;
+
+    img { // Center the image horizontally and vertically
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   @include breakpoint($tiny) {
-      h2 {
-          font-size: 1rem;
-      }    
-    
+    h2 {
+      font-size: 1rem;
+    }    
+
     .archive__item-teaser {
       float: left;
       width: span(5 of 12);
-      height: 250px;
+      height: 150px;
     }
 
     .archive__item-body {
       float: right;
-      padding-left: gutter(0.5 of 12);
-      padding-right: gutter(1 of 12);
       width: span(7 of 12);
     }
   }
@@ -228,12 +232,10 @@
 
     .archive__item-body {
       float: right;
-      padding-left: gutter(0.5 of 12);
-      padding-right: gutter(1 of 12);
       width: span(8 of 12);
     }
   }
-    
+
   @include breakpoint($medium) {
     h2 {
       font-size: 1.5rem;
@@ -243,7 +245,17 @@
       width: span(4 of 12);
       height: 250px;
     }
+      
+    .archive__item-body {
+      float: right;
+      padding-left: 10px;
+      width: span(8 of 12);
+    }
   }
+}
+
+.list__wrapper {
+  @include clearfix();
 }
 
 /*
@@ -278,16 +290,6 @@
     float: left;
     width: span(4 of 12);
 
-//    &:nth-child(2n + 1) {
-//      clear: both;
-//      margin-left: 0;
-//    }
-//
-//    &:nth-child(2n + 2) {
-//      clear: none;
-//      margin-left: gutter(of 10);
-//    }
-  
     // Fix the weird overflow when window is smaller than medium
     &:nth-child(3n + 1) {
       clear: both;
@@ -310,29 +312,7 @@
     margin-left: 0; /* override margin*/
     margin-right: 0; /* override margin*/
     width: span(4 of 12);
-
-//    &:nth-child(2n + 1) {
-//      clear: none;
-//    }
-//
-//    &:nth-child(4n + 1) {
-//      clear: both;
-//    }
-//
-//    &:nth-child(4n + 2) {
-//      clear: none;
-//      margin-left: gutter(1 of 12);
-//    }
-//
-//    &:nth-child(4n + 3) {
-//      clear: none;
-//      margin-left: gutter(1 of 12);
-//    }
-//
-//    &:nth-child(4n + 4) {
-//      clear: none;
-//      margin-left: gutter(1 of 12);
-//    }
+      
     &:nth-child(3n + 1) {
       clear: both;
       margin-left: 0;
@@ -475,7 +455,6 @@
 .feature__wrapper {
   @include clearfix();
   margin-bottom: 2em;
-  //border-bottom: 1px solid $border-color;
 
   // This adjusts the spacing for the 
   // Feature Row. Note that markdownify
