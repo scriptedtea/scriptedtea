@@ -11,11 +11,11 @@ title                    : "Scripted Tea"
 title_separator          : "-"
 name                     : "Lily Guo"
 description              : "Coding tips one brew at a time"
-url                      : "https://scriptedtea.github.io" # the base hostname & protocol for your site
-baseurl                  : "/scriptedtea" # the subpath of your site, e.g. "/blog"
+url                      : "https://scriptedtea.com" # the base hostname & protocol for your site
+baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name
 # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-teaser                   : /assets/images/generated/kyoto1-1000by664-43c81d.jpg
+teaser                   : #/assets/images/generated/kyoto1-1000by664-43c81d.jpg
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 
