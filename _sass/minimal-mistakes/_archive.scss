@@ -110,7 +110,7 @@
     
   .archive__item-teaser-hover-text {
     color: white;
-    font-size: $type-size-5;
+    font-size: $type-size-4;
     font-family: $button-text-font-family;
     position: relative;
     top: 50%;
@@ -118,6 +118,14 @@
     transform: translate(-50%, -50%);
     text-align: center;
     //padding: 0px 0px 0px 0px;
+      
+    @include breakpoint($tiny) {
+      font-size: $type-size-3;
+    }
+      
+    @include breakpoint($small) {
+      font-size: $type-size-4;
+    }
   }
     
   .archive__item-teaser-hover-link {
@@ -167,6 +175,66 @@
   }
 }
 
+.list__wrapper {
+
+  position: relative;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  clear: both;
+  font-size: 1.125em;
+
+  h2 {
+    margin: 0.5em 0; 
+  }
+
+  .archive__item-teaser {
+    margin-bottom: 2em;
+  }
+
+  @include breakpoint($tiny) {
+      h2 {
+          font-size: 1rem;
+      }    
+    
+    .archive__item-teaser {
+      float: left;
+      width: span(5 of 12);
+    }
+
+    .archive__item-body {
+      float: right;
+      padding-left: gutter(0.5 of 12);
+      padding-right: gutter(1 of 12);
+      width: span(7 of 12);
+    }
+  }
+
+  @include breakpoint($small) {
+    h2 {
+      font-size: 1rem;
+    }  
+    .archive__item-teaser {
+      float: left;
+      width: span(4 of 12);
+    }
+
+    .archive__item-body {
+      float: right;
+      padding-left: gutter(0.5 of 12);
+      padding-right: gutter(1 of 12);
+      width: span(8 of 12);
+    }
+  }
+    
+  @include breakpoint($medium) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 /*
    Grid view
    ========================================================================== */
@@ -199,15 +267,32 @@
     float: left;
     width: span(4 of 12);
 
-    &:nth-child(2n + 1) {
+//    &:nth-child(2n + 1) {
+//      clear: both;
+//      margin-left: 0;
+//    }
+//
+//    &:nth-child(2n + 2) {
+//      clear: none;
+//      margin-left: gutter(of 10);
+//    }
+  
+    // Fix the weird overflow when window is smaller than medium
+    &:nth-child(3n + 1) {
       clear: both;
       margin-left: 0;
     }
 
-    &:nth-child(2n + 2) {
+    &:nth-child(3n + 2) {
       clear: none;
-      margin-left: gutter(of 10);
+      margin-left: gutter(of 12);
     }
+
+    &:nth-child(3n + 3) {
+      clear: none;
+      margin-left: gutter(of 12);
+    }
+    
   }
 
   @include breakpoint($medium) {
@@ -215,27 +300,41 @@
     margin-right: 0; /* override margin*/
     width: span(4 of 12);
 
-    &:nth-child(2n + 1) {
-      clear: none;
-    }
-
-    &:nth-child(4n + 1) {
+//    &:nth-child(2n + 1) {
+//      clear: none;
+//    }
+//
+//    &:nth-child(4n + 1) {
+//      clear: both;
+//    }
+//
+//    &:nth-child(4n + 2) {
+//      clear: none;
+//      margin-left: gutter(1 of 12);
+//    }
+//
+//    &:nth-child(4n + 3) {
+//      clear: none;
+//      margin-left: gutter(1 of 12);
+//    }
+//
+//    &:nth-child(4n + 4) {
+//      clear: none;
+//      margin-left: gutter(1 of 12);
+//    }
+    &:nth-child(3n + 1) {
       clear: both;
+      margin-left: 0;
     }
 
-    &:nth-child(4n + 2) {
+    &:nth-child(3n + 2) {
       clear: none;
-      margin-left: gutter(1 of 12);
+      margin-left: gutter(of 12);
     }
 
-    &:nth-child(4n + 3) {
+    &:nth-child(3n + 3) {
       clear: none;
-      margin-left: gutter(1 of 12);
-    }
-
-    &:nth-child(4n + 4) {
-      clear: none;
-      margin-left: gutter(1 of 12);
+      margin-left: gutter(of 12);
     }
   }
 
