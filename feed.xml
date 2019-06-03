@@ -1,4 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://scriptedtea.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://scriptedtea.com/" rel="alternate" type="text/html" /><updated>2019-05-20T16:21:02-07:00</updated><id>https://scriptedtea.com/feed.xml</id><title type="html">Scripted Tea</title><subtitle>Coding tips one brew at a time</subtitle><author><name>Lily</name></author><entry><title type="html">Why I Chose Jekyll to Build My Website</title><link href="https://scriptedtea.com/tech/why-jekyll/" rel="alternate" type="text/html" title="Why I Chose Jekyll to Build My Website" /><published>2019-03-15T00:00:00-07:00</published><updated>2019-03-15T00:00:00-07:00</updated><id>https://scriptedtea.com/tech/why-jekyll</id><content type="html" xml:base="https://scriptedtea.com/tech/why-jekyll/">&lt;p&gt;&lt;img src=&quot;https://scriptedtea.com/assets/images/posts/jekyll_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="https://scriptedtea.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://scriptedtea.com/" rel="alternate" type="text/html" /><updated>2019-06-02T22:28:10-07:00</updated><id>https://scriptedtea.com/feed.xml</id><title type="html">Scripted Tea</title><subtitle>Coding tips one brew at a time</subtitle><author><name>Lily</name></author><entry><title type="html">How to Build a Static Jekyll Site with Github Pages</title><link href="https://scriptedtea.com/tech/deployment/" rel="alternate" type="text/html" title="How to Build a Static Jekyll Site with Github Pages" /><published>2019-06-02T00:00:00-07:00</published><updated>2019-06-02T00:00:00-07:00</updated><id>https://scriptedtea.com/tech/deployment</id><content type="html" xml:base="https://scriptedtea.com/tech/deployment/">&lt;div class=&quot;archive__item-teaser&quot;&gt;
+    &lt;img src=&quot;https://scriptedtea.com/assets/images/posts/jekyll_pages.jpg&quot; alt=&quot;&quot; /&gt;
+    &lt;span class=&quot;archive__item-caption&quot;&gt;Image Credit to Lars Veelaert
+&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p&gt;One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the &lt;a href=&quot;https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll&quot;&gt;official Github documentation&lt;/a&gt;) that talk about how to set it up, so I won’t go over it here. Within a few minutes, I was able to get my site up and running, and I was amazed at how easy it was to do that, but later on I ran into some issues that caused me to change my entire setup completely.&lt;/p&gt;
+
+&lt;p&gt;The way that is works is that you push all your code into the master branch, and then you create (or let Github create) another branch called &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;. Github will automatically render the page based on the source that resides on that branch. Therefore my workflow before consisted of the following:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Make changes on &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch, commit/push to remote&lt;/li&gt;
+  &lt;li&gt;Switch to &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, merge changes from master to branch, commit/push to remote &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch&lt;/li&gt;
+  &lt;li&gt;Github will automatically render what’s on &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The biggest problem with this is that Github Pages does not support custom Jekyll plugins. I was troubleshooting with another issue where the solution required using a custom component, and that’s when I realized that the current set up is a deal breaker for me. I decided to find out a different way of deploying my website while still using Github Pages. After some googling, I found that it’s possible to deploy only the static pages (all the content in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder), which contain the files post rendering by Jekyll. This required doing some Git trickery, and after consulting with various solutions, this is what has worked for me.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Make gh-pages only contain the generated HTML files&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This is what the new setup would look like.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch would only contain the source files (&lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder is ignored)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch would only contain what’s in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, and has no knowledge of files outside of it (and from its view, the content of &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder is the root)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;But by default in Git, you cannot have two branches that point to a different root. I’ve considered doing something with Git submodules but the downside to that is that master branch would end up keeping track of all the files in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, which means I end up duplicating the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; content, which is not ideal.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Solution is to put another git repo inside the _site folder&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The current git repo would continue pointing to the master branch as before (with &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder ignored), and then the 2nd git repo would be created inside the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder so it would have no knowledge of what’s outside of that folder. The 2nd repo would be pointing to the &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch so it would not conflict with the master branch.&lt;/p&gt;
+
+&lt;p&gt;Here are the git commands to help you get set up:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// First push all source files to origin master
+$ git init
+$ git add .
+$ git remote add origin ssh://git@github.com:username/project.git
+$ git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now gitignore the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ echo &quot;_site&quot; &amp;gt; .gitignore
+$ git add .
+$ git commit -m &quot;adding gitignore&quot;
+$ git push origin master
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now clone the 2nd repo, delete the master branch in the new repo:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd _site
+// Make sure this directory is empty via
+$ rm -r
+$ git clone ssh://git@github.com:username/project.git .
+$ git checkout origin/gh-pages -b gh-pages
+// Delete the master branch
+$ git branch -d master
+// Now locally delete all the files
+$ rm -r
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Build the Jekyll site locally to generate the HTMl files, then push&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd ..
+$ bundle exec jekyll build
+$ cd _site
+$ git add .
+$ git commit -m &quot;Deploying build&quot;
+$ git push origin gh-pages
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;In the project root repo, make sure there is no &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch, and you’re all set!&lt;/p&gt;
+
+&lt;p&gt;Make sure that you put an empty file called &lt;code class=&quot;highlighter-rouge&quot;&gt;.nojekyll&lt;/code&gt; file in the project root folder, so then Jekyll will put that file in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, and Github Pages will not try to render what’s in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder as a Jekyll site. It will just display a static site instead.&lt;/p&gt;
+
+&lt;p&gt;Now this is the new workflow using the new set up. Follow the steps below once you are finished making changes in your source and you want to deploy the new site to Github Pages.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll build&lt;/code&gt; in project root folder&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;cd _site&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;git add .&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;git commit -m &quot;Commit Message Here&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;code class=&quot;highlighter-rouge&quot;&gt;git push origin gh-pages&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here is a simple bash script called &lt;code class=&quot;highlighter-rouge&quot;&gt;deploy.sh&lt;/code&gt; that will do all the above commands (except for the build command) for you:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-z&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then
+  &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Please enter a git commit message&quot;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;exit
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;fi
+
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_site &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git add &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+git push origin gh-pages &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; .. &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;se&quot;&gt;\&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Successfully built and pushed gh-pages to Github.&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Make sure you give permission for the script to run:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;chmod +x deploy.sh&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;To run, just type this:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;$ ./deploy.sh &quot;Your Commit Message Here&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And that’s it! I got the best of both worlds where I get to keep track the source and the generated files on separate branches (thus avoided having to keep track of duplicate files), and I got to be able to use custom Jekyll plugins!&lt;/p&gt;</content><author><name>Lily Guo</name></author><category term="jekyll" /><category term="github pages" /><category term="web development" /><summary type="html">One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the [official Github documentation](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll)) that talk about how to set it up, so I won't go over it here.</summary></entry><entry><title type="html">Why I Chose Jekyll to Build My Website</title><link href="https://scriptedtea.com/tech/why-jekyll/" rel="alternate" type="text/html" title="Why I Chose Jekyll to Build My Website" /><published>2019-03-15T00:00:00-07:00</published><updated>2019-03-15T00:00:00-07:00</updated><id>https://scriptedtea.com/tech/why-jekyll</id><content type="html" xml:base="https://scriptedtea.com/tech/why-jekyll/">&lt;p&gt;&lt;img src=&quot;https://scriptedtea.com/assets/images/posts/jekyll_logo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the very beginning - from researching which stack to use all the way to web hosting and deployment. I wanted to make sure that I chose the right tools that suit my needs, and after a bit of research I ended up going with &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. Here is why.&lt;/p&gt;
 
@@ -6,7 +114,7 @@
 
 &lt;p&gt;After using Jekyll to build my static website, I have to say that I’m glad I went with it because it provides the best of both worlds in that it allows me to fully design my website in HTML/CSS/JS but on the other hand enables me to write minimal amount of code when I write a blog post (blog post has full markdown support and lets me inject raw HTML code if I find the need to do that). Not needing to code meant that I can focus more on the content of my posts, but also gives me the flexibility to make the post more visually appealing if I find the need to.&lt;/p&gt;
 
-&lt;p&gt;I will be posting more about Jekyll, so stay tuned!&lt;/p&gt;</content><author><name>Lily</name></author><category term="jekyll" /><category term="web development" /><summary type="html">I've been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the very beginning - from researching which stack to use all the way to web hosting and deployment. I wanted to make sure that I chose the right tools that suit my needs, and after a bit of research I ended up going with [Jekyll](https://jekyllrb.com/). Here is why.</summary></entry><entry><title type="html">Happy New Year!</title><link href="https://scriptedtea.com/miscellaneous/happy-new-year/" rel="alternate" type="text/html" title="Happy New Year!" /><published>2019-01-13T00:00:00-08:00</published><updated>2019-01-13T00:00:00-08:00</updated><id>https://scriptedtea.com/miscellaneous/happy-new-year</id><content type="html" xml:base="https://scriptedtea.com/miscellaneous/happy-new-year/">&lt;p&gt;&lt;img src=&quot;https://scriptedtea.com/assets/images/posts/image6-600by602-414ee3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;I will be posting more about Jekyll, so stay tuned!&lt;/p&gt;</content><author><name>Lily</name></author><category term="jekyll" /><category term="github pages" /><category term="web development" /><summary type="html">I've been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the very beginning - from researching which stack to use all the way to web hosting and deployment. I wanted to make sure that I chose the right tools that suit my needs, and after a bit of research I ended up going with [Jekyll](https://jekyllrb.com/). Here is why.</summary></entry><entry><title type="html">Happy New Year!</title><link href="https://scriptedtea.com/miscellaneous/happy-new-year/" rel="alternate" type="text/html" title="Happy New Year!" /><published>2019-01-13T00:00:00-08:00</published><updated>2019-01-13T00:00:00-08:00</updated><id>https://scriptedtea.com/miscellaneous/happy-new-year</id><content type="html" xml:base="https://scriptedtea.com/miscellaneous/happy-new-year/">&lt;p&gt;&lt;img src=&quot;https://scriptedtea.com/assets/images/posts/image6-600by602-414ee3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Happy New Year! I was on a plane when the clock striked past midnight while coming back on my trip from China. My 2 week vacation went by in a blur, and the next thing I knew I was already back to work. Unfortunately I caught a flu nearing the tail end of my trip so I took a day off to recover. I found that drinking some Chinese medicine really helped with re-gaining my appetite, and after 2 weeks I was finally able to eat normally.&lt;/p&gt;
 

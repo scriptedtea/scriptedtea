@@ -6,6 +6,11 @@ var store = [{
         "teaser":"https://scriptedtea.com/assets/images/posts/image6-600by602-414ee3.jpg"},{
         "title": "Why I Chose Jekyll to Build My Website",
         "excerpt":"I’ve been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the very beginning - from researching which stack to use all the way to web...","categories": ["tech"],
-        "tags": ["jekyll","web development"],
+        "tags": ["jekyll","github pages","web development"],
         "url": "https://scriptedtea.com/tech/why-jekyll/",
-        "teaser":"https://scriptedtea.com/assets/images/posts/jekyll_logo.png"},]
+        "teaser":"https://scriptedtea.com/assets/images/posts/jekyll_logo.png"},{
+        "title": "How to Build a Static Jekyll Site with Github Pages",
+        "excerpt":"Image Credit to Lars Veelaert One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation)...","categories": ["tech"],
+        "tags": ["jekyll","github pages","web development"],
+        "url": "https://scriptedtea.com/tech/deployment/",
+        "teaser":"https://scriptedtea.com/assets/images/posts/jekyll_pages.jpg"},]

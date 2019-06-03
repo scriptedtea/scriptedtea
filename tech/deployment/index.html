@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>How to Build a Static Jekyll Site with Github Pages - Scripted Tea</title>
+<meta name="description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Scripted Tea">
+<meta property="og:title" content="How to Build a Static Jekyll Site with Github Pages">
+<meta property="og:url" content="https://scriptedtea.com/tech/deployment/">
+
+
+  <meta property="og:description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
+
+
+
+  <meta property="og:image" content="https://scriptedtea.com/assets/images/posts/jekyll_pages.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-06-02T00:00:00-07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://scriptedtea.com/tech/deployment/">
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Lily Guo",
+      "url": "https://scriptedtea.com",
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Scripted Tea Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Raleway:400,500,700|Roboto:400,700|Source+Serif+Pro:400,700" rel="stylesheet">
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Scripted Tea</a>
+        <p class="site-title-slogan">-&nbsp;&nbsp;&nbsp;Coding tips one brew at a time</p>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/" >Home</a>
+            </li><li class="masthead__menu-item">
+              <a href="/blog/" >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a href="/works/" >Works</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/gallery/" >Gallery</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="How to Build a Static Jekyll Site with Github Pages">
+    <meta itemprop="description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
+    <meta itemprop="datePublished" content="June 02, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">How to Build a Static Jekyll Site with Github Pages
+</h1>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+          
+          
+            <p class="page__comment-count"><i class="fas fa-comment"></i>&nbsp;<a href="/tech/deployment/#disqus_thread" data-disqus-identifier="/tech/deployment">0 Comments</a></p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <div class="archive__item-teaser">
+    <img src="https://scriptedtea.com/assets/images/posts/jekyll_pages.jpg" alt="" />
+    <span class="archive__item-caption">Image Credit to Lars Veelaert
+</span>
+</div>
+
+<p></p>
+
+<p>One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the <a href="https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll">official Github documentation</a>) that talk about how to set it up, so I won’t go over it here. Within a few minutes, I was able to get my site up and running, and I was amazed at how easy it was to do that, but later on I ran into some issues that caused me to change my entire setup completely.</p>
+
+<p>The way that is works is that you push all your code into the master branch, and then you create (or let Github create) another branch called <code class="highlighter-rouge">gh-pages</code>. Github will automatically render the page based on the source that resides on that branch. Therefore my workflow before consisted of the following:</p>
+
+<ol>
+  <li>Make changes on <code class="highlighter-rouge">master</code> branch, commit/push to remote</li>
+  <li>Switch to <code class="highlighter-rouge">gh-pages</code> branch, merge changes from master to branch, commit/push to remote <code class="highlighter-rouge">gh-pages</code> branch</li>
+  <li>Github will automatically render what’s on <code class="highlighter-rouge">gh-pages</code></li>
+</ol>
+
+<p>The biggest problem with this is that Github Pages does not support custom Jekyll plugins. I was troubleshooting with another issue where the solution required using a custom component, and that’s when I realized that the current set up is a deal breaker for me. I decided to find out a different way of deploying my website while still using Github Pages. After some googling, I found that it’s possible to deploy only the static pages (all the content in <code class="highlighter-rouge">_site</code> folder), which contain the files post rendering by Jekyll. This required doing some Git trickery, and after consulting with various solutions, this is what has worked for me.</p>
+
+<p><strong>Make gh-pages only contain the generated HTML files</strong></p>
+
+<p>This is what the new setup would look like.</p>
+
+<ol>
+  <li><code class="highlighter-rouge">master</code> branch would only contain the source files (<code class="highlighter-rouge">_site</code> folder is ignored)</li>
+  <li><code class="highlighter-rouge">gh-pages</code> branch would only contain what’s in <code class="highlighter-rouge">_site</code> folder, and has no knowledge of files outside of it (and from its view, the content of <code class="highlighter-rouge">_site</code> folder is the root)</li>
+</ol>
+
+<p>But by default in Git, you cannot have two branches that point to a different root. I’ve considered doing something with Git submodules but the downside to that is that master branch would end up keeping track of all the files in <code class="highlighter-rouge">_site</code> folder, which means I end up duplicating the <code class="highlighter-rouge">_site</code> content, which is not ideal.</p>
+
+<p><strong>Solution is to put another git repo inside the _site folder</strong></p>
+
+<p>The current git repo would continue pointing to the master branch as before (with <code class="highlighter-rouge">_site</code> folder ignored), and then the 2nd git repo would be created inside the <code class="highlighter-rouge">_site</code> folder so it would have no knowledge of what’s outside of that folder. The 2nd repo would be pointing to the <code class="highlighter-rouge">gh-pages</code> branch so it would not conflict with the master branch.</p>
+
+<p>Here are the git commands to help you get set up:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// First push all source files to origin master
+$ git init
+$ git add .
+$ git remote add origin ssh://git@github.com:username/project.git
+$ git push origin master
+</code></pre></div></div>
+
+<p>Now gitignore the <code class="highlighter-rouge">_site</code> folder</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo "_site" &gt; .gitignore
+$ git add .
+$ git commit -m "adding gitignore"
+$ git push origin master
+</code></pre></div></div>
+
+<p>Now clone the 2nd repo, delete the master branch in the new repo:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd _site
+// Make sure this directory is empty via
+$ rm -r
+$ git clone ssh://git@github.com:username/project.git .
+$ git checkout origin/gh-pages -b gh-pages
+// Delete the master branch
+$ git branch -d master
+// Now locally delete all the files
+$ rm -r
+</code></pre></div></div>
+<p>Build the Jekyll site locally to generate the HTMl files, then push</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ..
+$ bundle exec jekyll build
+$ cd _site
+$ git add .
+$ git commit -m "Deploying build"
+$ git push origin gh-pages
+</code></pre></div></div>
+<p>In the project root repo, make sure there is no <code class="highlighter-rouge">gh-pages</code> branch, and you’re all set!</p>
+
+<p>Make sure that you put an empty file called <code class="highlighter-rouge">.nojekyll</code> file in the project root folder, so then Jekyll will put that file in <code class="highlighter-rouge">_site</code> folder, and Github Pages will not try to render what’s in <code class="highlighter-rouge">_site</code> folder as a Jekyll site. It will just display a static site instead.</p>
+
+<p>Now this is the new workflow using the new set up. Follow the steps below once you are finished making changes in your source and you want to deploy the new site to Github Pages.</p>
+
+<ol>
+  <li>Run <code class="highlighter-rouge">bundle exec jekyll build</code> in project root folder</li>
+  <li>Run <code class="highlighter-rouge">cd _site</code></li>
+  <li>Run <code class="highlighter-rouge">git add .</code></li>
+  <li>Run <code class="highlighter-rouge">git commit -m "Commit Message Here"</code></li>
+  <li>Run <code class="highlighter-rouge">git push origin gh-pages</code></li>
+</ol>
+
+<p>Here is a simple bash script called <code class="highlighter-rouge">deploy.sh</code> that will do all the above commands (except for the build command) for you:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+  </span><span class="nb">echo</span> <span class="s2">"Please enter a git commit message"</span>
+  <span class="nb">exit
+</span><span class="k">fi
+
+</span><span class="nb">cd </span>_site <span class="o">&amp;&amp;</span> <span class="se">\</span>
+git add <span class="nb">.</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+git commit <span class="nt">-m</span> <span class="s2">"</span><span class="nv">$1</span><span class="s2">"</span> <span class="o">&amp;&amp;</span> <span class="se">\</span>
+git push origin gh-pages <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">cd</span> .. <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="nb">echo</span> <span class="s2">"Successfully built and pushed gh-pages to Github."</span>
+</code></pre></div></div>
+
+<p>Make sure you give permission for the script to run:
+<code class="highlighter-rouge">chmod +x deploy.sh</code></p>
+
+<p>To run, just type this:
+<code class="highlighter-rouge">$ ./deploy.sh "Your Commit Message Here"</code></p>
+
+<p>And that’s it! I got the best of both worlds where I get to keep track the source and the generated files on separate branches (thus avoided having to keep track of duplicate files), and I got to be able to use custom Jekyll plugins!</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#github-pages" class="page__taxonomy-item" rel="tag">github pages</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#jekyll" class="page__taxonomy-item" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      
+      
+      <a href="/tags/#web-development" class="page__taxonomy-item" rel="tag">web development</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#tech" class="page__taxonomy-item" rel="tag">tech</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-06-02T00:00:00-07:00">June 02, 2019</time></p>
+        
+      </footer>
+    </div>
+    </article>
+      
+    <div class="page__more">
+        <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=How+to+Build+a+Static+Jekyll+Site+with+Github+Pages%20https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
+</section>
+
+
+        
+  <nav class="pagination">
+    
+      <a href="/tech/why-jekyll/" class="pagination--pager-previous" title="Why I Chose Jekyll to Build My Website
+"><i class="fas fa-long-arrow-alt-left"></i>&nbsp;&nbsp;&nbsp;Previous</a>
+    
+    
+      <a href="#" class="pagination--pager-next disabled">Next&nbsp;&nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
+    
+  </nav>
+
+        
+          
+            <div class="page__comments">
+  
+  
+      <h4 class="page__comments-title">Leave a comment</h4>
+      <section id="disqus_thread"></section>
+        <div id="disqus_thread"></div>
+    
+</div>
+          
+    </div>
+
+    
+
+
+      
+        <div class="page__related">
+          <h4 class="page__related-title">You may also enjoy...</h4>
+          <div class="grid__wrapper">
+
+        
+
+        
+
+          
+          
+
+          <!-- Make sure that it's not the same as itself -->
+          
+          <!-- Include only if it has passed the min -->
+          
+        
+
+          
+          
+
+          <!-- Make sure that it's not the same as itself -->
+          
+          <!-- Include only if it has passed the min -->
+          
+              <!-- Break if we have reached max # posts -->
+              
+              
+              
+
+
+
+<div class="related__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/posts/jekyll_logo.png"
+          
+          alt="">
+      </div>
+      
+        <div class="archive__item-body">
+          <h2 class="archive__item-title" itemprop="headline">
+            
+              <a href="/tech/why-jekyll/" rel="permalink">Why I Chose Jekyll to Build My Website
+</a>
+            
+          </h2>
+          
+            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+          
+            <p class="archive__item-excerpt" itemprop="description">I’ve been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the v...</p>
+          
+        </div>
+      
+    
+  </article>
+</div>
+              
+              
+          
+        
+          </div>
+        </div>
+
+
+
+
+</div>
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li class=follow-label><strong>Follow Me:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://twitter.com/scriptedtea"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a></li>
+        
+      
+        
+          <li><a href="https://github.com/scriptedtea"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a></li>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/lily2guo/"><i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i></a></li>
+        
+      
+    
+
+<!--    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i></a></li>-->
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Lily Guo. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; Theme based on <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://scriptedtea.com/tech/deployment/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/tech/deployment"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://scriptedtea.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<!-- Script for comment count -->
+<script id="dsq-count-scr" src="//scriptedtea.disqus.com/count.js" async></script>
+
+
+  
+
+
+
+  </body>
+</html>
