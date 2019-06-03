@@ -22,7 +22,7 @@
           {% endif %}
           alt="">
       </div>
-      {% if include.type == "list" %}
+      {% if include.type == "list" or include.type == "related" %}
         <div class="archive__item-body">
           <h2 class="archive__item-title" itemprop="headline">
             {% if post.link %}
