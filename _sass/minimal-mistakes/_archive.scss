@@ -343,6 +343,16 @@
       margin-left: gutter(of 12);
     }
   }
+    
+  .page__meta__block {
+    display: inline-block;
+  }
+    
+  .page__meta__date {
+    font-size: 0.7em; 
+    margin: 0 8px 0 2px;
+    color: $primary-color;
+  }
 
   .page__meta {
     margin: 0 0 4px;
@@ -430,6 +440,16 @@
       clear: none;
       margin-left: gutter(1 of 12);
     }
+  }
+    
+  .page__meta__block {
+    display: inline-block;
+  }
+    
+  .page__meta__date {
+    font-size: 0.7em; 
+    margin: 0 8px 0 2px;
+    color: $primary-color;
   }
 
   .page__meta {
