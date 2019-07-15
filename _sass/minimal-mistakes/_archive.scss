@@ -170,6 +170,16 @@
 
 // For items in the blog list and search list
 .list__item {
+  .page__meta__block {
+    display: inline-block;
+  }
+    
+  .page__meta__date {
+    font-size: 0.7em; 
+    margin: 0 8px 0 2px;
+    color: $primary-color;
+  }
+    
   .page__meta {
     margin: 0 0 4px;
     font-size: 0.6em;

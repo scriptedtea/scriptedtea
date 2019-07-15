@@ -24,16 +24,21 @@
       </div>
       {% if include.type == "list" or include.type == "related" %}
         <div class="archive__item-body">
-          <h2 class="archive__item-title" itemprop="headline">
+          <h2 class="archive__item-title" itemprop="headline" style="margin-bottom: 0;">
             {% if post.link %}
               <a href="{{ post.link }}">{{ title }}</a> <a href="{{ post.url | relative_url }}" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
             {% else %}
               <a href="{{ post.url | relative_url }}" rel="permalink">{{ title }}</a>
             {% endif %}
           </h2>
-          {% if post.read_time %}
-            <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-          {% endif %}
+          <div class="page__meta__block">
+              {% if post.date %}
+                <span class="page__meta__date">{{ post.date | date: "%B %d, %Y" }}</span>
+              {% endif %}
+              {% if post.read_time %}
+                <span class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> {% include read-time.html %}</span>
+              {% endif %}
+          </div>
           {% if post.excerpt %}
             <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 200 }}</p>
           {% endif %}
