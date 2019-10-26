@@ -19,22 +19,17 @@ layout: default
     
       <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
       <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+    {% else %}
+      <h3 class="archive__subtitle">Past Posts</h3>
+    {% endif %}
     
-      <div class="list__wrapper">
+    <div class="list__wrapper">
         {% for post in paginator.posts limit:3 %}
           <!-- You can pass in additional parameters which gets read by liquid -->
           {% include archive-single.html type="list" %}
         {% endfor %}
-      </div>
-    {% else %}
-      <h3 class="archive__subtitle">Past Posts</h3>
-      <div class="list__wrapper">
-        {% for post in paginator.posts limit:5 %}
-          <!-- You can pass in additional parameters which gets read by liquid -->
-          {% include archive-single.html type="list" %}
-        {% endfor %}
-      </div>
-    {% endif %}
+    </div>
     
-    {% include paginator.html %}
+    <!-- Disable Paginator as we don't want in the home page -->
+    <!-- {% include paginator.html %} -->
 </div>
