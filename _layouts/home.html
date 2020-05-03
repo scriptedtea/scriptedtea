@@ -14,14 +14,16 @@ layout: default
     <!-- Can optionally include here
     id="feature1" if there are multiple feature rows. 
     You can also pass in type="left" or "center" or "right" -->
-    {% if paginator.page == 1 %}
+    
+    <!-- Decided not to have different pagination (WONTFIX)-->
+    <!--  {% if paginator.page == 1 %} -->
       {% include feature_row %}
     
       <!-- Note that type of header here does not matter as the properties are specified in the CSS -->
       <h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
-    {% else %}
+    <!-- {% else %}
       <h3 class="archive__subtitle">Past Posts</h3>
-    {% endif %}
+    {% endif %} -->
     
     <div class="list__wrapper">
         {% for post in paginator.posts limit:3 %}
@@ -32,4 +34,7 @@ layout: default
     
     <!-- Disable Paginator as we don't want in the home page -->
     <!-- {% include paginator.html %} -->
+    
+    <a href="/blog/" class="pagination--pager-next" title="See all my posts">{{ site.data.ui-text[site.locale].view_more | default: "View More" }}&nbsp;&nbsp;&nbsp;<i class="fas fa-long-arrow-alt-right"></i></a>
+    
 </div>
