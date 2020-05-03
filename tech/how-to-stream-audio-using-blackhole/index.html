@@ -12,14 +12,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Scripted Tea">
 <meta property="og:title" content="How to Stream Computer Audio and Microphone on Mac Using Blackhole">
-<meta property="og:url" content="http://localhost:4000/tech/how-to-stream-audio-using-blackhole/">
+<meta property="og:url" content="https://scriptedtea.com/tech/how-to-stream-audio-using-blackhole/">
 
 
   <meta property="og:description" content="Since the COVID-19 lockdown started, one of the things I do to stay connected with friends is by playing games virtually. One of the most popular ones, which I also own, is Jackbox Games. We would all join a video conference call (eg. Google Meet or Zoom) together, I would share my screen with the game on it and everyone else joins using their phone. This works for the most part, except for one part: the audio. Since the game audio (or more generally, my computer audio) is being played through my speakers and getting recorded by my mic, there can potentially be a lot of noise or distortion, which isn’t ideal. After some googling, I learned that streaming computer audio on a Mac is a bit more tricky than Windows, but I managed to find a solution. Here is a tutorial on how to stream both the computer audio and your voice for any major video conferencing app (eg. Zoom, Google Meet, Discord, Skype etc).BlackHoleI recommend using BlackHole as it is a free application that supports the latest macOS (Catalina). This was developed as a replacement to SoundFlower, and similar to its predecessor, it is a virtual driver that you configure to route audio between apps.Step 1:Download the installer. Follow the instructions here for how to install BlackHole.Step 2:Use Launchpad or Spotlight to open the Audio MIDI Setup app. The app should look like this:Step 3:Open the app and you should see a list of audio devices, including the newly-installed BlackHole 16ch. The device list may look different depending on what macOS you have and your setup. If you are on macOS 10.14 or older, then you will see Built-in Microphone and Built-in Output where as for 10.15 (Catalina), it will show MacBook Pro Microphone and Macbook Pro Speakers like the screenshot below. Note that I have plugged in my own set of headphones which is why they’re also displayed here separately as “External Headphones” and “External Microphone”. At the bottom left side of the window, there is a + icon. Click on that and you will see a drop-down menu. Select “Create Multi-Output Device”.Step 4:You should see a list of devices that you can enable for the Multi-Output Device. A Multi-Output Device outputs the audio to all of the enabled devices. For example, if you enable your headphone and the Macbook Pro speaker, then if you play something, for example a video, the audio will come out from both the headphone and the speakers.Configure the setting similar to the screenshot below. Due to issues with the macOS, the Built-in Output or MacBook Pro Speaker must be listed as the top device in the Multi-Output. If you have an external headphone connected and do not wish to play the audio through the Built-in Output/Macbook Pro Speaker, then you can mute it by clicking on that device and checking “Mute” in the box on the right.    Make sure drift correction is enabled. If another device is listed at the top, simply uncheck and recheck to change the order.    You can mute the Macbook Pro Speaker or Built-in Output by clicking on the device and checking the box on the right under the &quot;Mute&quot; column.Step 5:Right-Click on the newly-created Multi-Output Device, and select “Use This Device For Sound Output”Alternatively, you can also configure it in the Sound Setting under System Preferences by clicking on it:Step 6:Open the app you use for video call. I used Discord for this example, as it is great for streaming videos. In the Audio setting, make sure you select BlackHole 16ch as the Input Device and Multi-Output Device as the Output Device. Now play a video (eg. on Youtube) and the person on the other side of the call should be able to hear it.But it Doesn’t Detect My Microphone/Voice! What to do?Since you’ve changed the input on the video conferencing app to BlackHole, it can no longer get the input from your microphone. In order to be able to stream both your microphone audio AND the system audio, we need a workaround. This is where we need the help of another app - a DAW or a Digital Audio Workstation. A DAW is a general term for applications that you use for recording and editing audio. For this example, we will be using Garageband as it is a free app that comes with the macOS, but the same concept is applied for other DAW as well.  Open Garageband, select “Empty Project” on the prompt.  Go to Track -&gt; New Track, and select “Audio Track”. You will see something like the screenshot below.  In the highlighted “Input” section, select the microphone you are using. For my case, I have selected “External Microphone”.  Enable Monitoring for that track as highlighted in the screenshot below. The button showing as orange means that monitoring is enabled.  Go to GarageBand -&gt; Preferences. Select Audio/MIDI and then configure the setting like the screenshot below. Input Device is the microphone, whereas the Output Device is BlackHole 16ch.  Note that to adjust your microphone level, simply turn up the level inside GarageBand, not the level in the Audio MIDI setup. It’s helpful to do a sound check with someone using the video conferencing app to make sure they can hear your voice.Voila! Now people on the other side of the call should be able to hear both your computer audio and your voice, so you can stream all the Jackbox Games you want without needing to worry about sound quality. If you have headphones plugged in you also don’t need to worry about disturbing your neighbours. I hope this can help improve your entertainment experience and stay connected with family and friends during this troubling time.">
 
 
 
-  <meta property="og:image" content="http://localhost:4000/assets/images/posts/2020-05-03/zoom_hangouts-600-0d6564.jpg">
+  <meta property="og:image" content="https://scriptedtea.com/assets/images/posts/2020-05-03/zoom_hangouts-600-0d6564.jpg">
 
 
 
@@ -36,7 +36,7 @@
   
 
 
-<link rel="canonical" href="http://localhost:4000/tech/how-to-stream-audio-using-blackhole/">
+<link rel="canonical" href="https://scriptedtea.com/tech/how-to-stream-audio-using-blackhole/">
 
 
 
@@ -49,7 +49,7 @@
       "@context": "http://schema.org",
       "@type": "Person",
       "name": "Lily Guo",
-      "url": "http://localhost:4000",
+      "url": "https://scriptedtea.com",
       "sameAs": null
     }
   </script>
@@ -179,15 +179,15 @@
 
       <section class="page__content" itemprop="text">
         
-        <p><img src="http://localhost:4000/assets/images/posts/2020-05-03/zoom_hangouts-800-0d6564.jpg" alt="image-center" class="align-center" /></p>
+        <p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/zoom_hangouts-800-0d6564.jpg" alt="image-center" class="align-center" /></p>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/jackbox.png" alt="image-right" class="align-right" /></p>
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/jackbox.png" alt="image-right" class="align-right" /></p>
 
 <p>Since the COVID-19 lockdown started, one of the things I do to stay connected with friends is by playing games virtually. One of the most popular ones, which I also own, is <a href="https://www.jackboxgames.com/">Jackbox Games</a>. We would all join a video conference call (eg. Google Meet or Zoom) together, I would share my screen with the game on it and everyone else joins using their phone. This works for the most part, except for one part: the audio. Since the game audio (or more generally, my computer audio) is being played through my speakers and getting recorded by my mic, there can potentially be a lot of noise or distortion, which isn’t ideal. After some googling, I learned that streaming computer audio on a Mac is a bit more tricky than Windows, but I managed to find a solution. Here is a tutorial on how to stream both the computer audio and your voice for any major video conferencing app (eg. Zoom, Google Meet, Discord, Skype etc).</p>
 
 <h2 id="blackhole">BlackHole</h2>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/blackhole.png" alt="image-center" class="align-center" /></p>
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/blackhole.png" alt="image-center" class="align-center" /></p>
 
 <p>I recommend using <a href="https://github.com/ExistentialAudio/BlackHole">BlackHole</a> as it is a free application that supports the latest macOS (Catalina). This was developed as a replacement to SoundFlower, and similar to its predecessor, it is a virtual driver that you configure to route audio between apps.</p>
 
@@ -195,36 +195,36 @@
 <p><a href="https://github.com/ExistentialAudio/BlackHole">Download the installer</a>. Follow the instructions <a href="https://github.com/ExistentialAudio/BlackHole/wiki/Installation">here</a> for how to install BlackHole.</p>
 <h3 id="step-2">Step 2:</h3>
 <p>Use Launchpad or Spotlight to open the Audio MIDI Setup app. The app should look like this:
-<img src="http://localhost:4000/assets/images/posts/2020-05-03/bh1.png" alt="image-center" class="align-center" /></p>
+<img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh1.png" alt="image-center" class="align-center" /></p>
 <h3 id="step-3">Step 3:</h3>
 <p>Open the app and you should see a list of audio devices, including the newly-installed BlackHole 16ch. The device list may look different depending on what macOS you have and your setup. If you are on macOS 10.14 or older, then you will see <strong>Built-in Microphone</strong> and <strong>Built-in Output</strong> where as for 10.15 (Catalina), it will show <strong>MacBook Pro Microphone</strong> and <strong>Macbook Pro Speakers</strong> like the screenshot below. Note that I have plugged in my own set of headphones which is why they’re also displayed here separately as “External Headphones” and “External Microphone”. 
-<img src="http://localhost:4000/assets/images/posts/2020-05-03/bh2.png" alt="image-center" class="align-center" />
+<img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh2.png" alt="image-center" class="align-center" />
 At the bottom left side of the window, there is a <strong>+</strong> icon. Click on that and you will see a drop-down menu. Select “Create Multi-Output Device”.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/bh3.png" alt="image-center" class="align-center" /></p>
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh3.png" alt="image-center" class="align-center" /></p>
 <h3 id="step-4">Step 4:</h3>
 <p>You should see a list of devices that you can enable for the Multi-Output Device. A Multi-Output Device outputs the audio to all of the enabled devices. For example, if you enable your headphone and the Macbook Pro speaker, then if you play something, for example a video, the audio will come out from both the headphone and the speakers.</p>
 
 <p>Configure the setting similar to the screenshot below. Due to issues with the macOS, the Built-in Output or MacBook Pro Speaker must be listed as the top device in the Multi-Output. If you have an external headphone connected and do not wish to play the audio through the Built-in Output/Macbook Pro Speaker, then you can mute it by clicking on that device and checking “Mute” in the box on the right.</p>
 <figure class="align-center">
-  <img src="http://localhost:4000/assets/images/posts/2020-05-03/bh4.png" alt="" />
+  <img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh4.png" alt="" />
   <figcaption>Make sure drift correction is enabled. If another device is listed at the top, simply uncheck and recheck to change the order.</figcaption>
 </figure>
 <figure class="align-center">
-  <img src="http://localhost:4000/assets/images/posts/2020-05-03/bh5.png" alt="" />
+  <img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh5.png" alt="" />
   <figcaption>You can mute the Macbook Pro Speaker or Built-in Output by clicking on the device and checking the box on the right under the "Mute" column.</figcaption>
 </figure>
 <h3 id="step-5">Step 5:</h3>
 <p>Right-Click on the newly-created Multi-Output Device, and select “Use This Device For Sound Output”</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/bh6.png" alt="image-center" class="align-center" /></p>
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh6.png" alt="image-center" class="align-center" /></p>
 
 <p>Alternatively, you can also configure it in the Sound Setting under System Preferences by clicking on it:
-<img src="http://localhost:4000/assets/images/posts/2020-05-03/bh7.png" alt="image-center" class="align-center" /></p>
+<img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh7.png" alt="image-center" class="align-center" /></p>
 <h3 id="step-6">Step 6:</h3>
 <p>Open the app you use for video call. I used Discord for this example, as it is great for streaming videos. In the Audio setting, make sure you select <strong>BlackHole 16ch</strong> as the Input Device and <strong>Multi-Output Device</strong> as the Output Device. Now play a video (eg. on Youtube) and the person on the other side of the call should be able to hear it.</p>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/bh8.png" alt="image-center" class="align-center" /></p>
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh8.png" alt="image-center" class="align-center" /></p>
 
 <h2 id="but-it-doesnt-detect-my-microphonevoice-what-to-do">But it Doesn’t Detect My Microphone/Voice! What to do?</h2>
 <p>Since you’ve changed the input on the video conferencing app to BlackHole, it can no longer get the input from your microphone. In order to be able to stream both your microphone audio AND the system audio, we need a workaround. This is where we need the help of another app - a DAW or a Digital Audio Workstation. A DAW is a general term for applications that you use for recording and editing audio. For this example, we will be using <strong>Garageband</strong> as it is a free app that comes with the macOS, but the same concept is applied for other DAW as well.</p>
@@ -237,8 +237,8 @@ At the bottom left side of the window, there is a <strong>+</strong> icon. Click
   <li>Note that to adjust your microphone level, simply turn up the level inside GarageBand, not the level in the Audio MIDI setup. It’s helpful to do a sound check with someone using the video conferencing app to make sure they can hear your voice.</li>
 </ul>
 
-<p><img src="http://localhost:4000/assets/images/posts/2020-05-03/bh9.png" alt="image-center" class="align-center" />
-<img src="http://localhost:4000/assets/images/posts/2020-05-03/bh10.png" alt="image-center" class="align-center" />
+<p><img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh9.png" alt="image-center" class="align-center" />
+<img src="https://scriptedtea.com/assets/images/posts/2020-05-03/bh10.png" alt="image-center" class="align-center" />
 Voila! Now people on the other side of the call should be able to hear both your computer audio and your voice, so you can stream all the Jackbox Games you want without needing to worry about sound quality. If you have headphones plugged in you also don’t need to worry about disturbing your neighbours. I hope this can help improve your entertainment experience and stay connected with family and friends during this troubling time.</p>
 
 
@@ -309,11 +309,11 @@ Voila! Now people on the other side of the call should be able to hear both your
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=How+to+Stream+Computer+Audio+and+Microphone+on+Mac+Using+Blackhole%20http%3A%2F%2Flocalhost%3A4000%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://twitter.com/intent/tweet?text=How+to+Stream+Computer+Audio+and+Microphone+on+Mac+Using+Blackhole%20https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-stream-audio-using-blackhole%2F" class="btn__social btn__social--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
 </section>
 
 
@@ -440,7 +440,13 @@ Voila! Now people on the other side of the call should be able to hear both your
               
           </div>
           
-            <p class="archive__item-excerpt" itemprop="description">I’ve always been wanting to try doing mobile, but never got a chance to work on it until now. One of the reasons why I bought a Macbook back in 2013 was just so I could do iOS development, but I so...</p>
+            <p class="archive__item-excerpt" itemprop="description">
+    
+
+
+
+
+I’ve always been wanting to try doing mobile, but never got a chance to work on it until now. One of the reasons why I bought a Macbook back in 2013 was just so I could do iOS development...</p>
           
         </div>
       
@@ -629,7 +635,7 @@ Voila! Now people on the other side of the call should be able to hear both your
     
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/tech/how-to-stream-audio-using-blackhole/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.url = "https://scriptedtea.com/tech/how-to-stream-audio-using-blackhole/";  // Replace PAGE_URL with your page's canonical URL variable
       this.page.identifier = "/tech/how-to-stream-audio-using-blackhole"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
