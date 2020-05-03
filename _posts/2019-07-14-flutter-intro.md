@@ -6,7 +6,7 @@ categories: [tech]
 tags: [flutter, android, ios, dart, mobile]
 header:
   teaser: /assets/images/posts/flutter_logo.png
-excerpt: "I've always been wanting to try doing mobile, but never got a chance to work on it until now. One of the reasons why I bought a Macbook back in 2013 was just so I could do iOS development, but I somehow never got around to do that. Other than not having time or being lazy, there were other things such as deciding whether to make an Android or iOS app. Each had its pros and cons. At the time, I was leaning more towards iOS development as I didn't own an Android phone then, but having to learn a brand new language (Objective-C) and the entire Apple ecosystem created an uphill battle for me, which made it difficult to get started."
+excerpt_separator: <!--more-->
 ---
 <div class="archive__item-teaser">
     <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/flutter_logo.png" alt="">
