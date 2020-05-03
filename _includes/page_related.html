@@ -3,10 +3,13 @@
 {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
       {% if page.id and page.related %}
         <div class="page__related">
+            
           <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy..." }}</h4>
           <div class="grid__wrapper">
 
         {% assign posts_in_same_category = site.categories[page.categories.first] %}
+              
+        {% assign foundResult = false %}
 
         {% for post in posts_in_same_category %}
 
@@ -23,16 +26,33 @@
           {% endif %}
           <!-- Include only if it has passed the min -->
           {% if sameTagCount >= site.min_related_tags_count %}
-              <!-- Break if we have reached max # posts -->
-              {% if relatedPosts >= 3 %}
+              {% if relatedPosts >= site.related_max_num_posts %}
                 {% break %}
               {% endif %}
+              
+              {% assign foundResult = true %}
               
               {% include archive-single.html type="related" %}
               
               {% assign relatedPosts = relatedPosts | plus: 1 %}
           {% endif %}
         {% endfor %}
+              
+        <!-- If we did not find any result, just display the most recent posts -->
+        {% if foundResult == false %}
+          {% assign numPostsAdded = 0 %}
+          {% for post in site.posts %}  
+              {% if numPostsAdded >= site.related_max_num_posts %}
+                {% break %}
+              {% endif %}
+              
+              {% if post.url != page.url %}
+                {% include archive-single.html type="related" %}
+                {% assign numPostsAdded = numPostsAdded | plus: 1 %}
+              {% endif %}
+          {% endfor %}
+        {% endif %}
+              
           </div>
         </div>
 {% endif %}

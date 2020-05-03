@@ -18,6 +18,8 @@ repository               : "scriptedtea/scriptedtea" # GitHub username/repo-name
 teaser                   : #/assets/images/generated/kyoto1-1000by664-43c81d.jpg
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
+# Max Number of Related Posts
+related_max_num_posts    : 3
 
 min_related_tags_count   : 1
 

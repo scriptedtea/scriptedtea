@@ -209,12 +209,9 @@
   .archive__item-teaser {
     margin-bottom: 0.5em;
 
-    img { // Center the image horizontally and vertically
+    img {
       margin: 0;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      vertical-align: top;
     }
   }
 
@@ -226,7 +223,7 @@
     .archive__item-teaser {
       float: left;
       width: span(5 of 12);
-      height: 150px;
+      height: 250px;
     }
 
     .archive__item-body {
@@ -242,7 +239,7 @@
     .archive__item-teaser {
       float: left;
       width: span(4 of 12);
-      height: 150px;
+      height: 250px;
     }
 
     .archive__item-body {
@@ -474,10 +471,28 @@
   .archive__item-teaser {
     @include breakpoint($small) {
       max-height: 200px;
+      img {
+        height: 200px;
+      }
     }
 
     @include breakpoint($medium) {
       max-height: 200px;
+      img {
+        height: 150px;
+      }
+    }
+      
+    @include breakpoint($large) {
+      img {
+        height: 150px;
+      }
+    }
+
+    @include breakpoint($x-large) {
+      img {
+        height: 150px;
+      }
     }
   }
 }
