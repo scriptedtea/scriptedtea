@@ -23,4 +23,9 @@ var store = [{
         "excerpt":"Since the COVID-19 lockdown started, one of the things I do to stay connected with friends is by playing games virtually. One of the most popular ones, which I also own, is Jackbox Games. We would all join a video conference call (eg. Google Meet or Zoom) together, I would...","categories": ["tech"],
         "tags": ["how-to","mac","audio"],
         "url": "https://scriptedtea.com/tech/how-to-stream-audio-using-blackhole/",
-        "teaser":"https://scriptedtea.com/assets/images/posts/2020-05-03/zoom_hangouts-600-0d6564.jpg"},]
+        "teaser":"https://scriptedtea.com/assets/images/posts/2020-05-03/zoom_hangouts-600-0d6564.jpg"},{
+        "title": "How to Use iPhone as a Webcam for Mac for Free",
+        "excerpt":"Photo from iPhoneByte Now that working from home is the norm, use of video conferencing became more prevalent than ever. At work we use it to hold meetings, manager chats and even happy hours. Even though casual wear is the standard in tech for everyday work, I’m always conscious about...","categories": ["tech"],
+        "tags": ["how-to","mac","iphone"],
+        "url": "https://scriptedtea.com/tech/how-to-use-iphone-as-webcam-free/",
+        "teaser":"https://scriptedtea.com/assets/images/posts/2020-05-10/iphonewebcam.jpg"},]
