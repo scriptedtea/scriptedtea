@@ -9,10 +9,10 @@ var store = [{
         "tags": ["jekyll","github pages","web development"],
         "url": "https://scriptedtea.com/tech/why-jekyll/",
         "teaser":"https://scriptedtea.com/assets/images/posts/jekyll_logo.png"},{
-        "title": "How to Build a Static Jekyll Site with Github Pages",
-        "excerpt":"Image Credit to Lars Veelaert One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation)...","categories": ["tech"],
+        "title": "How to Build and Deploy a Static Jekyll Site with Github Pages",
+        "excerpt":"Image Credit to Lars Veelaert Update (2020/05/10) - Fixed incorrect commands and added more precaution notes. One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There...","categories": ["tech"],
         "tags": ["jekyll","github pages","web development"],
-        "url": "https://scriptedtea.com/tech/deployment/",
+        "url": "https://scriptedtea.com/tech/how-to-deploy-jekyll-to-github/",
         "teaser":"https://scriptedtea.com/assets/images/posts/jekyll_pages.jpg"},{
         "title": "Flutter and the Mobile World",
         "excerpt":"I’ve always been wanting to try doing mobile, but never got a chance to work on it until now. One of the reasons why I bought a Macbook back in 2013 was just so I could do iOS development, but I somehow never got around to do that. Other than...","categories": ["tech"],

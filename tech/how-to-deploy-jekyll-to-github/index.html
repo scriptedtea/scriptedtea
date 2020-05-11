@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>How to Build a Static Jekyll Site with Github Pages - Scripted Tea</title>
+<!-- begin _includes/seo.html --><title>How to Build and Deploy a Static Jekyll Site with Github Pages - Scripted Tea</title>
 <meta name="description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
 
 
@@ -11,8 +11,8 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Scripted Tea">
-<meta property="og:title" content="How to Build a Static Jekyll Site with Github Pages">
-<meta property="og:url" content="https://scriptedtea.com/tech/deployment/">
+<meta property="og:title" content="How to Build and Deploy a Static Jekyll Site with Github Pages">
+<meta property="og:url" content="https://scriptedtea.com/tech/how-to-deploy-jekyll-to-github/">
 
 
   <meta property="og:description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
@@ -36,7 +36,7 @@
   
 
 
-<link rel="canonical" href="https://scriptedtea.com/tech/deployment/">
+<link rel="canonical" href="https://scriptedtea.com/tech/how-to-deploy-jekyll-to-github/">
 
 
 
@@ -152,7 +152,7 @@
   
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="headline" content="How to Build a Static Jekyll Site with Github Pages">
+    <meta itemprop="headline" content="How to Build and Deploy a Static Jekyll Site with Github Pages">
     <meta itemprop="description" content="One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the official Github documentation) that talk about how to set it up, so I won’t go over it here.">
     <meta itemprop="datePublished" content="June 02, 2019">
     
@@ -160,7 +160,7 @@
     <div class="page__inner-wrap">
       
         <header>
-          <h1 id="page-title" class="page__title" itemprop="headline">How to Build a Static Jekyll Site with Github Pages
+          <h1 id="page-title" class="page__title" itemprop="headline">How to Build and Deploy a Static Jekyll Site with Github Pages
 </h1>
           
             <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
@@ -172,7 +172,7 @@
 </p>
           
           
-            <p class="page__comment-count"><i class="fas fa-comment"></i>&nbsp;<a href="/tech/deployment/#disqus_thread" data-disqus-identifier="/tech/deployment">0 Comments</a></p>
+            <p class="page__comment-count"><i class="fas fa-comment"></i>&nbsp;<a href="/tech/how-to-deploy-jekyll-to-github/#disqus_thread" data-disqus-identifier="/tech/how-to-deploy-jekyll-to-github">0 Comments</a></p>
           
         </header>
       
@@ -184,6 +184,10 @@
     <span class="archive__item-caption">Image Credit to Lars Veelaert
 </span>
 </div>
+
+<p></p>
+
+<h3 id="update-20200510---fixed-incorrect-commands-and-added-more-precaution-notes">Update (2020/05/10) - Fixed incorrect commands and added more precaution notes.</h3>
 
 <p></p>
 
@@ -233,14 +237,12 @@ $ git push origin master
 
 <p>Now clone the 2nd repo, delete the master branch in the new repo:</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd _site
-// Make sure this directory is empty via
-$ rm -r
-$ git clone ssh://git@github.com:username/project.git .
+// Make sure this directory by deleting all the files inside
+$ git clone git@github.com:username/project.git .
 $ git checkout origin/gh-pages -b gh-pages
 // Delete the master branch
 $ git branch -d master
-// Now locally delete all the files
-$ rm -r
+// Now locally delete all the files - but keep the .git folder
 </code></pre></div></div>
 <p>Build the Jekyll site locally to generate the HTMl files, then push</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ cd ..
@@ -253,6 +255,8 @@ $ git push origin gh-pages
 <p>In the project root repo, make sure there is no <code class="highlighter-rouge">gh-pages</code> branch, and you’re all set!</p>
 
 <p>Make sure that you put an empty file called <code class="highlighter-rouge">.nojekyll</code> file in the project root folder, so then Jekyll will put that file in <code class="highlighter-rouge">_site</code> folder, and Github Pages will not try to render what’s in <code class="highlighter-rouge">_site</code> folder as a Jekyll site. It will just display a static site instead.</p>
+
+<p><strong>Caution: Be careful not to run</strong> bundle exec jekyll clean <strong>as this will remove all the files inside the _site folder, so I recommend performing manual cleaning instead.</strong></p>
 
 <p>Now this is the new workflow using the new set up. Follow the steps below once you are finished making changes in your source and you want to deploy the new site to Github Pages.</p>
 
@@ -357,11 +361,11 @@ git push origin gh-pages <span class="o">&amp;&amp;</span> <span class="se">\</s
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=How+to+Build+a+Static+Jekyll+Site+with+Github+Pages%20https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://twitter.com/intent/tweet?text=How+to+Build+and+Deploy+a+Static+Jekyll+Site+with+Github+Pages%20https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-deploy-jekyll-to-github%2F" class="btn__social btn__social--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-deploy-jekyll-to-github%2F" class="btn__social btn__social--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fdeployment%2F" class="btn__social btn__social--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fscriptedtea.com%2Ftech%2Fhow-to-deploy-jekyll-to-github%2F" class="btn__social btn__social--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
 </section>
 
 
@@ -579,8 +583,8 @@ git push origin gh-pages <span class="o">&amp;&amp;</span> <span class="se">\</s
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://scriptedtea.com/tech/deployment/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/tech/deployment"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://scriptedtea.com/tech/how-to-deploy-jekyll-to-github/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/tech/how-to-deploy-jekyll-to-github"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
