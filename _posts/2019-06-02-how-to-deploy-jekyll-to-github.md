@@ -1,5 +1,5 @@
 ---
-title: How to Build a Static Jekyll Site with Github Pages
+title: How to Build and Deploy a Static Jekyll Site with Github Pages
 date: 2019-06-02
 author: Lily Guo
 categories: [tech]
@@ -12,6 +12,10 @@ excerpt: "One of the great things about Jekyll is that it has close integration 
     <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/jekyll_pages.jpg" alt="">
     <span class="archive__item-caption">{{ "Image Credit to Lars Veelaert" | markdownify | remove: "<p>" | remove: "</p>" }}</span>
 </div>
+
+<p></p>
+
+### Update (2020/05/10) - Fixed incorrect commands and added more precaution notes.
 
 <p></p>
 
@@ -60,14 +64,12 @@ $ git push origin master
 Now clone the 2nd repo, delete the master branch in the new repo:
 ```
 $ cd _site
-// Make sure this directory is empty via
-$ rm -r
-$ git clone ssh://git@github.com:username/project.git .
+// Make sure this directory by deleting all the files inside
+$ git clone git@github.com:username/project.git .
 $ git checkout origin/gh-pages -b gh-pages
 // Delete the master branch
 $ git branch -d master
-// Now locally delete all the files
-$ rm -r
+// Now locally delete all the files - but keep the .git folder
 ```
 Build the Jekyll site locally to generate the HTMl files, then push
 ```
@@ -81,6 +83,8 @@ $ git push origin gh-pages
 In the project root repo, make sure there is no `gh-pages` branch, and you're all set!
 
 Make sure that you put an empty file called `.nojekyll` file in the project root folder, so then Jekyll will put that file in `_site` folder, and Github Pages will not try to render what's in `_site` folder as a Jekyll site. It will just display a static site instead.
+
+**Caution: Be careful not to run** bundle exec jekyll clean **as this will remove all the files inside the _site folder, so I recommend performing manual cleaning instead.**
 
 Now this is the new workflow using the new set up. Follow the steps below once you are finished making changes in your source and you want to deploy the new site to Github Pages.
 
