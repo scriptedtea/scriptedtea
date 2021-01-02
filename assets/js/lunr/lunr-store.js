@@ -28,4 +28,9 @@ var store = [{
         "excerpt":"Photo from iPhoneByte Now that working from home is the norm, use of video conferencing became more prevalent than ever. At work we use it to hold meetings, manager chats and even happy hours. Even though casual wear is the standard in tech for everyday work, I’m always conscious about...","categories": ["tech"],
         "tags": ["how-to","mac","iphone"],
         "url": "https://scriptedtea.com/tech/how-to-use-iphone-as-webcam-free/",
-        "teaser":"https://scriptedtea.com/assets/images/posts/2020-05-10/iphonewebcam.jpg"},]
+        "teaser":"https://scriptedtea.com/assets/images/posts/2020-05-10/iphonewebcam.jpg"},{
+        "title": "2020: A Review + 2021 Goals",
+        "excerpt":"Happy New Year! 2021 is finally upon us. Before we look into our aspirations for 2021, I wanted to take a moment to reflect on the year we just went through. 2020 has certainly been a unique year in comparison to previous years, where so much - and so little...","categories": ["misc"],
+        "tags": ["diary"],
+        "url": "https://scriptedtea.com/misc/year-in-review/",
+        "teaser":"https://scriptedtea.com/assets/images/posts/2020-12-30/flower.jpeg"},]
