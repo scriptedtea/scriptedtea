@@ -5,7 +5,7 @@ categories: [tech]
 tags: [jekyll, github pages, web development]
 header:
   teaser: /assets/images/posts/jekyll_logo.png
-excerpt: "I've been wanting to create my own website for a long time, but never really committed to making one until recently. Since I had no former experience with web development, I had to start from the very beginning - from researching which stack to use all the way to web hosting and deployment. I wanted to make sure that I chose the right tools that suit my needs, and after a bit of research I ended up going with [Jekyll](https://jekyllrb.com/). Here is why."
+excerpt_separator: "<!--more-->"
 ---
 
 <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/jekyll_logo.png" alt="">

@@ -6,7 +6,7 @@ categories: [tech]
 tags: [jekyll, github pages, web development]
 header:
   teaser: /assets/images/posts/jekyll_pages.jpg
-excerpt: "One of the great things about Jekyll is that it has close integration with Github Pages, which means you can let Github host and publish your website with just a few config changes. There are a lot of guides (for example, the [official Github documentation](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll)) that talk about how to set it up, so I won't go over it here."
+excerpt_separator: "<!--more-->"
 ---
 <div class="archive__item-teaser">
     <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/jekyll_pages.jpg" alt="">

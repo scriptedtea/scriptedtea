@@ -6,7 +6,7 @@ categories: [tech]
 tags: [how-to, mac, iphone]
 header:
   teaser: /assets/images/posts/2020-05-10/iphonewebcam.jpg
-excerpt: "Now that working from home is the norm, use of video conferencing became more prevalent than ever. At work we use it to hold meetings, manager chats and even happy hours. Even though casual wear is the standard in tech for everyday work, I'm always conscious about how I present myself to others and in this case, how I look on video."
+excerpt_separator: "<!--more-->"
 ---
 <div class="archive__item-teaser">
     <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/2020-05-10/iphonewebcam.jpg" alt="">
