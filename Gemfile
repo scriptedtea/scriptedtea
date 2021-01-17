@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem "jekyll", "~> 3.6.3"
+gem "jekyll", "~> 4.0.1"
 
 group :jekyll_plugins do
  gem "jekyll-paginate"
@@ -7,7 +7,7 @@ group :jekyll_plugins do
  gem "jekyll-gist"
  gem "jekyll-feed"
  gem "jemoji"
- gem 'jekyll_picture_tag', '~> 1.6'
+ gem 'jekyll_picture_tag'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

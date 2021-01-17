@@ -31,14 +31,28 @@ layout: blank
                     </span>
                     <br>
                 {% endif %}
+                {% if page.meta.download %}
+                    <span>Download: 
+                        <span>{{ page.meta.download | markdownify | remove: "<p>" | remove: "</p>" }} </span>
+                    </span>
+                    <br>
+                {% endif %}
             </div>
         </div>
         
         <div class="modal-center-wrapper">
-        {% if page.video %}
-            {% include video id=page.video.id provider=page.video.provider %}
-        {% endif %}
-        
+            {% if page.video %}
+                    {% include video id=page.video.id provider=page.video.provider %}
+            {% endif %}
+            
+            {% if page.carousel %}
+                {% assign carousel_height = page.carousel.height %}
+                {% assign carousel_width = page.carousel.width %}
+                <div class="modal-center">
+                    {% include carousel.html width=carousel_width height=carousel_height unit="px" duration="7" %}
+                </div>
+            {% endif %}
+                
         {% for image in page.images %}
             <div class="modal-center">
                 {% assign img_alt = image.alt %}
